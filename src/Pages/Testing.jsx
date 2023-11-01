@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { BorderColor } from "@mui/icons-material";
+import SearchIcon from '@mui/icons-material/Search';
 // import FormControl from '@mui/material/FormControl';
 
 const Testing = () => {
@@ -162,13 +163,15 @@ const Testing = () => {
                 </span>
 
                 {/* Search Bar start */}
-                <div className="row">
-                  <form action="">
+
+                <form action="">
+                  <div className="row">
+
                     <div className="col-lg-8">
                       <div className="searchBar">
                         <div className="row">
-                          <ul className="list-inline searchliButtom" style={{marginBottom:'0px'}}>
-                            <li className="list-inline-item">
+                          <ul className="list-inline searchliButtom" style={{ marginBottom: '0px' }}>
+                            <li className="list-inline-item" style={{ width: '30%' }}>
                               <select
                                 name=""
                                 id=""
@@ -193,6 +196,7 @@ const Testing = () => {
                                 className="searchRoom"
                               />
                             </li>
+                            <hr style={{ margin: '0px' }} />
                           </ul>
                         </div>
                         <ul className="list-inline searchliButtom">
@@ -266,7 +270,7 @@ const Testing = () => {
                                 outline: "none",
                               }}
                             >
-                              <option value="">Tenant type</option>
+                              <option value="">Tenant</option>
                               <option value=""></option>
                               <option value=""></option>
                               <option value=""></option>
@@ -275,8 +279,15 @@ const Testing = () => {
                         </ul>
                       </div>
                     </div>
-                  </form>
-                </div>
+                    <div className="col-lg-4">
+                      <div className="searchButton">
+                        <SearchIcon /> Search
+                      </div>
+
+                    </div>
+                  </div>
+                </form>
+
 
                 {/* Search Bar end */}
               </div>

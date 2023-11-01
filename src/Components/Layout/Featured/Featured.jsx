@@ -64,56 +64,56 @@ const Featured = () => {
             id: 1,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
         {
             id: 2,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
         {
             id: 3,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
         {
             id: 4,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
         {
             id: 5,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
         {
             id: 6,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
         {
             id: 7,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
         {
             id: 8,
             name: 'Room for rent',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                '1598, 23B, Sector 23, Chandigarh, 160023, India',
             img: '/cardImage/cardImage.png',
         },
     ];
@@ -148,11 +148,13 @@ const Featured = () => {
                                         fontSize='large'
                                         className='Arrow-prev'
                                         onClick={slidePrev}
+                                        style={{ color: '#DEDEDE' }}
                                     />
                                     <ArrowRightIcon
                                         fontSize='large'
                                         className='Arrow-next'
                                         onClick={slideNext}
+                                        style={{ color: '#5E17EB ' }}
                                     />
                                 </div>
                             </div>

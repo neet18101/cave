@@ -65,14 +65,16 @@
 .post-card .card {
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  max-width: 400px;
+  max-width: 460px;
+  width: 386px;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .post-card .card img {
-  height: 150px;
-  object-fit: fill;
+  height: 245.328px;
+  flex-shrink: 0;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -82,15 +84,16 @@
 
 .post-card .card .card-body .card-title {
   font-weight: 500;
-  font-size: 16px;
-  color: #444;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
   text-align: justify;
 }
 
 .post-card .card .card-body .card-text {
-  font-weight: 300;
   color: #666;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 12px;
   text-align: justify;
 }
 
@@ -164,8 +167,40 @@
   }
 }
 .gray-button {
-  color: #B8B0C9 !important;
+  color: #b8b0c9 !important;
 }
-.purple-button{
-    color: #5E17EB !important;
+.purple-button {
+  color: #5e17eb !important;
+}
+.cardImage__leftBadge {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.bg-dark-1 {
+  background-color: #5e17eb !important;
+}
+.FeaturedBage {
+  margin-top: 0px;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.rating {
+  color: #444;
+  font-size: 13.473px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 132.523%; /* 17.855px */
+  letter-spacing: -0.337px;
+}
+.cardPrice {
+  color: #5e5e5e;
+
+  font-family: Inter;
+  font-size: 18.817px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.523%; /* 24.937px */
+  letter-spacing: -0.47px;
 }
