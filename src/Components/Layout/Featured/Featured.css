@@ -11,7 +11,7 @@
 
 .second-heading {
   margin-top: 0px;
-  font-size: 25px;
+  font-size: 35px;
   text-align: left;
   color: #595959;
   text-transform: capitalize;
@@ -63,11 +63,11 @@
 }
 
 .post-card .card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgb(206 206 207 / 90%) 0px 7px 29px 0px;
   max-width: 460px;
   width: 386px;
-  border-radius: 10px;
+  border: 1px solid #dfdfdf;
+  border-radius: 20px;
   overflow: hidden;
 }
 
