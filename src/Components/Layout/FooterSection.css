@@ -1,0 +1,28 @@
+    #footerSection {
+    background: #6155df;
+    padding: 50px 0px;
+    }
+    #footerSection .footerleft_text {
+    color: white;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 36.87px;
+    word-wrap: break-word;
+    margin-bottom: 60px;
+    }
+    #footerSection span {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 35px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    }
+    #footerSection span a {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21.35px;
+    text-decoration: none;
+    
+    word-wrap: break-word;
+    }
