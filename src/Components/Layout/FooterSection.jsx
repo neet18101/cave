@@ -27,6 +27,10 @@ const FooterSection = () => {
               <div className="footerleft_text">
                 <h2>Get rent on time</h2>
               </div>
+              <p style={{ color: "#fff" }}>We assure rent on 5th of
+                every month. No more late
+                rent payments or rent
+                collection hassle </p>
             </div>
           </div>
         </div>

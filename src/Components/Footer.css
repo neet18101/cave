@@ -1,0 +1,26 @@
+.footer-inner {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  background-color: #fff;
+  filter: blur(50px);
+  width: 13%;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.footer {
+  background: #000;
+  padding: 21px 15px;
+}
+
+.footer-bottom {
+  background: #181616 none repeat scroll 0 0;
+}
+.footer-bottom {
+  padding: 25px 0;
+  color: #fff;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-transform: capitalize !important;
+}

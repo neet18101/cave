@@ -10,13 +10,28 @@ const Featured = () => {
     const swiperRef = useRef(null);
     useEffect(() => {
         const mySwiper = new Swiper('.swiper-container', {
-            slidesPerView: 3, // Number of slides to show at once
+            slidesPerView: 1, // Number of slides to show at once
             spaceBetween: 20,
             navigation: {
                 nextEl: '.Arrow-next',
                 prevEl: '.Arrow-prev',
             },
             loop: true,
+            // Responsive breakpoints
+            breakpoints: {
+                // When the viewport width is 575px or smaller
+                575: {
+                    slidesPerView: 1, // Show only 1 slide
+                },
+                // When the viewport width is 768px or smaller
+                768: {
+                    slidesPerView: 2, // Show 2 slides
+                },
+                // When the viewport width is 1024px or smaller
+                1024: {
+                    slidesPerView: 3, // Back to showing 3 slides
+                },
+            },
         });
     }, []);
     const [slideBegOrNot, handleSlideByState] = useState({

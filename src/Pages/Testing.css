@@ -33,25 +33,26 @@ nav .innerRightSide {
   display: inline-block;
   margin: 0 10px;
 }
-.hero-inner {
-  top: 140px;
-  left: 50px;
-  background-color: #fff;
-  filter: blur(90px);
-  width: 10%;
-  height: 115px;
-}
+
 .hero-inner,
 .hero-item {
-  position: absolute;
+  position: relative;
   border-radius: 50%;
 }
 .hero-item {
-  top: 200px;
-  left: 600px;
+  top: 10px;
+  left: 500px;
   background: linear-gradient(224.66deg, #667df5, #5e17eb);
   width: 88px;
   height: 88px;
+}
+.hero-inner {
+  top: 55px;
+  left: 30px;
+  background-color: #fff;
+  filter: blur(60px);
+  width: 60px;
+  height: 115px;
 }
 
 .discover-a-place-container {
@@ -193,4 +194,12 @@ label {
   border-radius: 10px;
   font-size: 20px;
   color: #fff;
+}
+.counterDiv {
+  color: #fff;
+  margin-top: 150px;
+}
+.counter {
+  font-size: 50px;
+  font-weight: 700;
 }

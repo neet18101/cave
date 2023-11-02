@@ -6,6 +6,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { BorderColor } from "@mui/icons-material";
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from "react-router-dom";
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -121,9 +122,9 @@ const Header = () => {
                       Login
                     </a>
                     <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to="/signup">
                       Signup
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li className="nav-item">
@@ -148,6 +149,8 @@ const Header = () => {
       </header>
       <section id="home">
         <div className="container">
+          <div className="hero-inner" />
+          <div className="hero-item" />
           <div className="row align-items-center">
             <div className="col-sm-12 col-lg-6">
               <div className="home_text">
@@ -289,9 +292,31 @@ const Header = () => {
                     </div>
                   </div>
                 </form>
-
                 {/* Search Bar end */}
               </div>
+              <div className="col-lg-12">
+                <div className="row">
+                  <div className="col-lg-6">
+                    <ul className="list-inline counterDiv">
+                      <li className="list-list-item counterDivItem">
+                        <span className="counter">{count1}+ </span>
+                        Property  Ready
+                      </li>
+
+                    </ul>
+                  </div>
+                  <div className="col-lg-6">
+                    <ul className="list-inline counterDiv">
+                      <li className="list-list-item counterDivItem">
+                        <span className="counter">{count2}+ </span>
+                        Happy
+                        Customers
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
             </div>
             <div className="col-sm-12 col-lg-6">
               <div className="home-image">
@@ -302,8 +327,8 @@ const Header = () => {
           </div>
         </div>
       </section>
-      <div className="hero-item" />
-      <div className="hero-inner" />
+
+
       {/* <div className="hero-child" /> */}
     </>
   );
