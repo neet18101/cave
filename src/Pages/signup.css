@@ -20,6 +20,29 @@
 }
 .signupImg {
   position: absolute;
-  bottom: 70px;
+  bottom: 20px;
   margin-right: -90px;
+}
+.createAccountDiv {
+  color: #2c2c2c;
+  font-size: 48.28px  !important;
+  font-weight: 600;
+  margin-top: 50px;
+  line-height: 46.84px;
+  letter-spacing: 4.59px;
+  word-wrap: break-word;
+}
+/* signup form  */
+.button-box{
+  width: 220px;
+  margin: 32px auto;
+  position: relative;
+  border-radius: 30px;
+}
+.toggle-btn{
+  padding: 10px 30px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background: transparent;
 }
