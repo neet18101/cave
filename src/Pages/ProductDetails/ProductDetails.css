@@ -1,0 +1,223 @@
+.overview {
+  color: black;
+  font-size: 33px;
+  padding: 50px;
+  font-weight: 600;
+  line-height: 43.73px;
+  word-wrap: break-word;
+}
+.ownerDetails {
+  outline: none;
+  border: none;
+  background: #5e17eb;
+  font-size: 18px;
+  padding: 15px 50px;
+  color: #fff;
+  border-radius: 5px;
+}
+.vistDesgin {
+  outline: none;
+  border: none;
+  padding: 13px 50px;
+  border: 1px solid #9b9b9b;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #5e17eb;
+}
+.commonDetails {
+  padding: 0px 80px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+.commonDetailsICons {
+  padding: 10px 80px;
+}
+.commonDetailsICons span {
+  font-size: 20px;
+  color: #000;
+}
+.amentitiesIcons {
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: center;
+  border-radius: 5px;
+}
+.amentitiesIcons img {
+  padding-top: 20px;
+}
+.service-section {
+  padding: 40px 10px;
+}
+.service-section .btn {
+  float: right;
+  position: relative;
+  top: -40px;
+  font-size: 12px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+.service-item {
+  position: relative;
+  border-radius: 14.93px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid #d2d2d2;
+  box-sizing: border-box;
+  width: 100%;
+  color: #696969;
+}
+.service-item .button-group {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+
+.service-item .button-group .pg {
+  font-size: 7.52px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(222, 222, 222, 1);
+}
+.service-item .button-group .for-boys {
+  font-size: 7.52px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(94, 23, 235, 1);
+  border: #fff !important;
+  background-color: #fff !important;
+  margin-left: 10px;
+}
+.prime_stay span {
+  float: right;
+}
+.single-room-with {
+  letter-spacing: -0.02em;
+  line-height: 132.52%;
+  font-weight: 500;
+}
+.service-item .content {
+  padding: 12px;
+}
+.image-4-icon {
+  width: 19px;
+  height: 19px;
+  object-fit: cover;
+}
+.contact-owner {
+  letter-spacing: -0.02em;
+  line-height: 132.52%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #5e17eb;
+  border-color: #5e17eb;
+}
+.prime_stay {
+  font-size: 18px;
+  font-family: "Inter";
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: 19px;
+}
+.kara-eads-l7ewhkq1b2s-unsplash-icon1 {
+  border-radius: 15px 15px 0px 0px;
+  height: 210px;
+}
+
+
+.fp__offer_item_single {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  margin: 10px 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 !important;
+  border: 1px solid #d4d4d4;
+}
+.fp__offer_item_single .img {
+  width: 100%;
+}
+
+.fp__offer_item_single .img .button-group {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.fp__offer_item_single .img .button-group .pg {
+  font-size: 7.52px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(222, 222, 222, 1);
+}
+.fp__offer_item_single .img .button-group .for-boys {
+  font-size: 7.52px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(94, 23, 235, 1);
+  border: #fff !important;
+  background-color: #fff !important;
+}
+
+.fp__offer_item_single .text {
+  width: 100%;
+  padding: 16px 30px;
+}
+.fp__offer_item_single .text .btn {
+  float: right;
+  font-size: 9px;
+  position: relative;
+  top: -20px;
+  right: -10px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(222, 222, 222, 1);
+}
+.fp__offer_item_single .text h3 {
+  font-size: 26.87px;
+  font-family: "Inter";
+  font-weight: 700;
+  color: rgba(33, 33, 33, 1);
+}
+
+.fp__offer_item_single .text p span {
+  font-size: 10px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(105, 105, 105, 1);
+}
+
+.fp__offer_item_single .title {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 10px 0px 5px;
+  transition: all linear 0.3s;
+  display: block;
+  color: var(--colorBlack);
+  font-family: var(--headingFont);
+  -webkit-transition: all linear 0.3s;
+  -moz-transition: all linear 0.3s;
+  -ms-transition: all linear 0.3s;
+  -o-transition: all linear 0.3s;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fp__offer_item_single .text p {
+  font-size: 13.87px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: rgba(105, 105, 105, 1);
+}

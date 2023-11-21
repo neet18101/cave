@@ -10,6 +10,25 @@ nav {
   display: flex;
   align-items: center;
   padding: 0px 25px;
+  background: #000;
+}
+nav.active {
+  background: #fff;
+}
+.fixed-top {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  filter: drop-shadow(2px 4px 6px grey);
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    top: -50px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
 }
 nav .menu-img {
   width: 25px;
@@ -19,6 +38,15 @@ nav .menu-img {
 nav .logo {
   width: 30px;
   cursor: pointer;
+}
+nav.active .logoName {
+  color: #000;
+}
+.imanower {
+  color: #fff;
+}
+nav.avtive #navbarDropdown a {
+  color: #000;
 }
 nav .logoName {
   text-decoration: none;
@@ -36,12 +64,12 @@ nav .innerRightSide {
 
 .hero-inner,
 .hero-item {
-  position: relative;
   border-radius: 50%;
 }
 .hero-item {
-  top: 10px;
-  left: 500px;
+  position: absolute !important;
+  top: 190px;
+  left: 600px;
   background: linear-gradient(224.66deg, #667df5, #5e17eb);
   width: 88px;
   height: 88px;

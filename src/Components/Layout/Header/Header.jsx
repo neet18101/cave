@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../../Pages/Testing.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { BorderColor } from "@mui/icons-material";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -51,22 +52,57 @@ const Header = () => {
     };
     updateCounter();
   }, []);
+
+  // navbar sticky
+  const [active, setActive] = useState(false);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  });
   return (
     <>
-      <header style={{ background: "#000" }}>
-        <nav className="navbar navbar-expand-lg navbar-sticky">
+      <header>
+        <nav
+          className={`${
+            active === true
+              ? "navbar fixed-top active navbar-expand-lg navbar-sticky"
+              : "navbar navbar-expand-lg navbar-sticky"
+          }`}
+        >
           <div className="container">
             <a className="navbar-brand logoName" href="#">
-              <img
-                decoding="async"
-                src="/icons/vector.svg"
-                className="img-fluid w-25 navbar-brand-regular px-3"
-              />
-              <img
-                decoding="async"
-                src="/icons/brand.svg"
-                className="img-fluid navbar-brand-sticky"
-              />
+              {active === true ? (
+                <>
+                  <img
+                    decoding="async"
+                    src="/icons/pajamas_hamburger.svg"
+                    className="img-fluid w-25 navbar-brand-regular px-3"
+                  />
+
+                  <img
+                    decoding="async"
+                    src="/icons/brand2.svg"
+                    className="img-fluid navbar-brand-sticky"
+                  />
+                </>
+              ) : (
+                <>
+                  <img
+                    decoding="async"
+                    src="/icons/vector.svg"
+                    className="img-fluid w-25 navbar-brand-regular px-3"
+                  />
+
+                  <img
+                    decoding="async"
+                    src="/icons/brand.svg"
+                    className="img-fluid navbar-brand-sticky"
+                  />
+                </>
+              )}
               BachelorsCave
             </a>
             <button
@@ -102,11 +138,19 @@ const Header = () => {
                     data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
-                    style={{
-                      color: "#fff",
-                      textTransform: "none",
-                      fontWeight: "bold",
-                    }}
+                    style={
+                      active === true
+                        ? {
+                            color: "#000",
+                            textTransform: "none",
+                            fontWeight: "bold",
+                          }
+                        : {
+                            color: "#fff",
+                            textTransform: "none",
+                            fontWeight: "bold",
+                          }
+                    }
                   >
                     I’m an owner <KeyboardArrowDownIcon />
                   </a>
@@ -118,7 +162,7 @@ const Header = () => {
                       List Property
                     </a>
                     <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="/login">
                       Login
                     </a>
                     <div className="dropdown-divider" />
@@ -131,7 +175,12 @@ const Header = () => {
                   <a className="nav-link scroll" href="#app-screenshots">
                     <Button
                       variant="outlined"
-                      style={{
+                      style={active ?{
+                        color: "#000",
+                        borderColor: "#000",
+                        padding: "0px 15px",
+                        textTransform: "capitalize",
+                      }: {
                         color: "#fff",
                         borderColor: "#fff",
                         padding: "0px 15px",
@@ -300,23 +349,20 @@ const Header = () => {
                     <ul className="list-inline counterDiv">
                       <li className="list-list-item counterDivItem">
                         <span className="counter">{count1}+ </span>
-                        Property  Ready
+                        Property Ready
                       </li>
-
                     </ul>
                   </div>
                   <div className="col-lg-6">
                     <ul className="list-inline counterDiv">
                       <li className="list-list-item counterDivItem">
                         <span className="counter">{count2}+ </span>
-                        Happy
-                        Customers
+                        Happy Customers
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-
             </div>
             <div className="col-sm-12 col-lg-6">
               <div className="home-image">
@@ -327,7 +373,6 @@ const Header = () => {
           </div>
         </div>
       </section>
-
 
       {/* <div className="hero-child" /> */}
     </>

@@ -34,7 +34,7 @@
 }
 /* signup form  */
 .button-box {
-  width: 50%;
+  width: 51%;
   border: 2px solid #5e17eb;
   text-align: center;
   margin: 32px auto;
@@ -45,13 +45,14 @@
   padding: 10px 39px;
   cursor: pointer;
   border: 0;
-  outline: none;
+  outline: none;  
   background: transparent;
-  color: white;
+  color: #747474;
 
   font-weight: 600;
   position: relative;
 }
+
 #btn {
   top: 0;
   left: 0;
@@ -62,6 +63,10 @@
   border-radius: 30px;
   transition: 0.5s;
 }
+.toggle-btn.active {
+  color: white;
+}
+
 .social-icons {
   margin: 30px auto;
   text-align: center;
@@ -101,4 +106,53 @@
   position: relative;
   font-weight: 500;
   color: #898989;
+}
+.emailInput {
+  border: none;
+  padding-left: 20px;
+  width: 80%;
+}
+.emailInput::placeholder {
+  color: #909090;
+  font-size: 18.73px;
+  font-weight: 500;
+  line-height: 20.11px;
+  letter-spacing: 0.21px;
+  word-wrap: break-word;
+}
+.emailInput:focus-visible {
+  border: none;
+  outline: none;
+}
+.field {
+  border-bottom: 1px solid #909090;
+  width: 50%;
+  text-align: left;
+  margin: 0 auto;
+}
+.field img {
+  width: 25px;
+  padding: 10px 0px;
+}
+.error {
+  display: none;
+}
+
+.createAccountButton {
+  padding: 10px 130px;
+
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.createAccountButton span {
+  color: #ffffff;
+}
+#ownerSignup {
+  left: 50px;
+}
+#tenantSignup {
+  left: 450px;
+  display: none;
 }
