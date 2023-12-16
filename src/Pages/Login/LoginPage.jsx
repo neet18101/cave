@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import "./Login.css";
+import { useDispatch } from "react-redux";
+import { userLoginAction } from "../../Redux/Action/userAction";
+import { Toaster } from "react-hot-toast";
 
 function LoginPage() {
+  const dispatch = useDispatch();
+
   let initialData = {
     email: "",
-    phone_number: "",
+    password: "",
   };
-  const [visible, setVisible] = useState("");
+  const [visible, setVisible] = useState(false);
   const [formData, setFormData] = useState(initialData);
   const [formErrors, setFormErrors] = useState(initialData);
   useEffect(() => {
     // Implement form validation here
-    const { email, password, agree } = formData;
+    const { email, password } = formData;
     const errors = {};
     if (!email || !email.includes("@")) {
       errors.email = "Valid email is required";
@@ -21,30 +26,37 @@ function LoginPage() {
     if (!password || password.length < 6) {
       errors.password = "Password must be at least 6 characters";
     }
-    if (!agree) {
-      errors.agree = "You must agree to the terms and conditions";
-    } else {
-      errors.agree = "";
-    }
+
     setFormErrors(errors);
   }, [formData]);
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
+  useEffect(() => {
+    // Load remember me preference from local storage on mount
+    const rememberMe = localStorage.getItem("rememberMe") === "true";
+    setFormData((prevData) => ({ ...prevData, agree: rememberMe }));
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+  const handleRememberMe = () => {
+    // Update the local storage when "Remember Me" is toggled
+    localStorage.setItem("rememberMe", !formData.agree);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(formErrors).every((error) => !error)) {
-      // Form is valid, you can proceed with form submission here
-      console.log("=========>", formData);
-    } else {
-      alert("Please fix the form errors before submitting");
-    }
+    // Perform login logic using formData
+    dispatch(userLoginAction(formData));
+    // console.log("Form data submitted:", formData);
   };
 
   return (
     <>
+     <Toaster position="top-center" reverseOrder={false} />
       <section className="loginSection">
         <div className="container">
           <div className="row">
@@ -72,7 +84,12 @@ function LoginPage() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} id="ownerSignup" action="" style={{ marginTop: "50px" }}>
+                <form
+                  onSubmit={handleSubmit}
+                  id="ownerSignup"
+                  action=""
+                  style={{ marginTop: "50px" }}
+                >
                   <div className="form-group mb-3" style={{ width: "100%" }}>
                     <div className="text-left loginWidth d-flex flex-column justify-content-center align-item-center">
                       <img
@@ -140,6 +157,7 @@ function LoginPage() {
                             name="agree"
                             checked={formData.agree}
                             onChange={handleInputChange}
+                            onClick={handleRememberMe}
                           />
                           <label
                             className="form-check-label"

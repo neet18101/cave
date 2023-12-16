@@ -129,7 +129,7 @@ const Listing = () => {
                 </div >
                 
             </section >
-            <FooterSection />
+          
             <Footer />
 
 

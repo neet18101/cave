@@ -9,6 +9,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { BorderColor } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
+import { decryptData } from "../../../_helper/cryptoUtils";
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -63,6 +64,22 @@ const Header = () => {
       setActive(false);
     }
   });
+
+  const userData = JSON.parse(localStorage.getItem("userInfo"));
+  const [sortedData, setSortedData] = useState("");
+  // console.log(userData && userData.token,VITE_SECRET_KEY);
+  const decode = (token, secertKey) => {
+    setSortedData(decryptData(token, secertKey));
+  };
+  useEffect(() => {
+    decode(userData && userData.token, import.meta.env.VITE_SECRET_KEY);
+  }, []);
+
+  const logOut = () => {
+    localStorage.removeItem("userInfo");
+    window.location.href = "/";
+  };
+
   return (
     <>
       <header>
@@ -117,87 +134,162 @@ const Header = () => {
             >
               <span className="ti-align-justify navbar-toggler-icon" />
             </button>
-            <div className="collapse navbar-collapse" id="navbarText">
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a
-                    className="nav-link scroll active"
-                    aria-current="page"
-                    href="#home"
-                  >
-                    <form action="" className="">
-                      <img src="/image/Vector.png" alt="" />
-                    </form>
-                  </a>
-                </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    style={
-                      active === true
-                        ? {
-                            color: "#000",
-                            textTransform: "none",
-                            fontWeight: "bold",
-                          }
-                        : {
-                            color: "#000",
-                            textTransform: "none",
-                            fontWeight: "bold",
-                          }
-                    }
-                  >
-                    I’m an owner <KeyboardArrowDownIcon />
-                  </a>
-                  <div
-                    className="dropdown-menu dropdown__menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <Link to={"/listing"} className="dropdown-item">
-                      List Property
-                    </Link>
-                    <div className="dropdown-divider" />
-                    <Link className="dropdown-item" to="/login">
-                      Login
-                    </Link>
-                    <div className="dropdown-divider" />
-                    <Link className="dropdown-item" to="/signup">
-                      Signup
-                    </Link>
+            {sortedData && sortedData != null ? (
+              <>
+                <div class="nav__right d-flex justify-content-between align-items-center">
+                  <div class="user d-flex justify-content-start align-items-center">
+                    <a href="#">
+                      <img
+                        src="image/account-circle.png"
+                        class="user__icon"
+                        alt="user account"
+                      />
+                    </a>
+                    <div className="dropdown">
+                      <button
+                        id="user__name"
+                        className="d-flex justify-content-between align-items-center"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        {sortedData?.name}{" "}
+                        <i className="fa-solid fa-chevron-down" />
+                      </button>
+                      <ul className="dropdown-menu mt-2">
+                        <li>
+                          <Link to={'/profile'} className="dropdown__item">
+                            My Profile
+                          </Link>
+                        </li>
+                        <hr />
+                        <li>
+                          <a className="dropdown__item" href="#">
+                            Manage Subscription
+                          </a>
+                        </li>
+                        <hr />
+                        <li>
+                          <a className="dropdown__item" href="#">
+                            Tenant Space
+                          </a>
+                        </li>
+                        <hr />
+                        <li>
+                          <a className="dropdown__item" href="#">
+                            Shortlist
+                          </a>
+                        </li>
+                        <hr />
+                        <li>
+                          <a className="dropdown__item" href="#">
+                            Seen Properties
+                          </a>
+                        </li>
+                        <hr />
+                        <li>
+                          <a className="dropdown__item" href="#">
+                            Owners you contacted
+                          </a>
+                        </li>
+                        <hr />
+                        <li>
+                          <a className="dropdown__item log__out" href="#" onClick={logOut}>
+                            Sign out
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </li>
-                <li className="nav-item">
-                  <Link to="/signup" className="nav-link scroll">
-                    <Button
-                      variant="outlined"
+                  <a href="#" class="up__plan">
+                    Upgrade Plan
+                  </a>
+                  <button class="nav__register">Register</button>
+                </div>
+              </>
+            ) : (
+              <div className="collapse navbar-collapse" id="navbarText">
+                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <a
+                      className="nav-link scroll active"
+                      aria-current="page"
+                      href="#home"
+                    >
+                      <form action="" className="">
+                        <img src="/image/Vector.png" alt="" />
+                      </form>
+                    </a>
+                  </li>
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
                       style={
-                        active
+                        active === true
                           ? {
                               color: "#000",
-                              borderColor: "#000",
-                              padding: "0px 15px",
-                              textTransform: "capitalize",
+                              textTransform: "none",
+                              fontWeight: "bold",
                             }
                           : {
                               color: "#000",
-                              borderColor: "#000",
-                              padding: "0px 15px",
-                              textTransform: "capitalize",
+                              textTransform: "none",
+                              fontWeight: "bold",
                             }
                       }
                     >
-                      Register
-                    </Button>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+                      I’m an owner <KeyboardArrowDownIcon />
+                    </a>
+                    <div
+                      className="dropdown-menu dropdown__menu"
+                      aria-labelledby="navbarDropdown"
+                    >
+                      <Link to={"/listing"} className="dropdown-item">
+                        List Property
+                      </Link>
+                      <div className="dropdown-divider" />
+                      <Link className="dropdown-item" to="/login">
+                        Login
+                      </Link>
+                      <div className="dropdown-divider" />
+                      <Link className="dropdown-item" to="/signup">
+                        Signup
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/signup" className="nav-link scroll">
+                      <Button
+                        variant="outlined"
+                        style={
+                          active
+                            ? {
+                                color: "#000",
+                                borderColor: "#000",
+                                padding: "0px 15px",
+                                textTransform: "capitalize",
+                              }
+                            : {
+                                color: "#000",
+                                borderColor: "#000",
+                                padding: "0px 15px",
+                                textTransform: "capitalize",
+                              }
+                        }
+                      >
+                        Register
+                      </Button>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </nav>
       </header>

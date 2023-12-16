@@ -1,19 +1,16 @@
-import React from 'react';
+import React from "react";
 import { useState } from "react";
 
-import './Profile.css'
-import SubNavbar from '../../Components/Layout/Header/SubNavbar';
-import Footer from '../../Components/Footer';
+import "./Profile.css";
+import SubNavbar from "../../Components/Layout/Header/SubNavbar";
+import Footer from "../../Components/Footer";
 
 function Profile() {
   const [nameChange, setNameChange] = useState("Navneet Yadav");
-  const handleClickName = () => { };
+  const handleClickName = () => {};
   return (
     <>
       <SubNavbar />
-
-      
-
       <section className="container account">
         <h3 className="account__title">Manage my account</h3>
         <div className="booking d-flex account__detail ">
@@ -117,8 +114,12 @@ function Profile() {
             >
               <h3>My Profile</h3>
               <div className="user__id d-flex justify-content-between align-items-center">
-                <div className="user__icon d-flex ">
-                  <img src="/image/account-circle.png" alt="user img" className='account__circle' />
+                <div className=" d-flex ">
+                  <img
+                    src="/image/account-circle.png"
+                    alt="user img"
+                    className="account__circle"
+                  />
                   <li className="user__name d-flex  flex-column align-items-start justify-content-start ">
                     <input
                       type="text"
@@ -213,11 +214,9 @@ function Profile() {
           </div>
         </div>
       </section>
-      <Footer/>
-
-
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Profile
+export default Profile;
