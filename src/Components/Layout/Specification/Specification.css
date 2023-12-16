@@ -1,0 +1,233 @@
+.header__about {
+    background-color: #caf0f8;
+    padding: 1rem;
+    height: 880px;
+    margin-bottom: 200px;
+    /* margin-top: 50px; */
+    position: relative;
+}
+
+.header__about__main {
+    padding-top: 100px;
+}
+
+.header__about__main h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    width: 666px;
+    height: 80px;
+}
+
+.header__about__main h1 span {
+    color: #ff4f00;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
+
+.header__about__main p {
+    width: 576px;
+    height: 56px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #000;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.header__about__submain {
+    position: absolute;
+    top: 460px;
+    margin-top: -5rem;
+    margin: 0 4rem;
+    padding: 2rem;
+    border-radius: .5rem;
+    background-color: #ffffff;
+    box-shadow:0px 0px 18px #d7d7d7;
+}
+
+.submain__box img {
+    width: 2.5rem;
+    min-width: 30px;
+    margin-bottom: 20px;
+}
+
+.submain__box__head h1 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: rgb(20 33 61/var(1));
+    ;
+    font-weight: 600;
+}
+
+.submain__box__head p {
+    width: 250px;
+    color: grey;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    margin-top: 10px;
+}
+
+.about__submain__tech{
+    padding: 0 310px;
+    margin-top: 50px;
+}
+.about__submain__tech p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0 20px;
+    color: grey;
+}
+
+.submain__tech img{
+width: 3.5rem;
+margin-bottom: 15px;
+
+}
+
+.submain__tech h1{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.header__about__submain button{
+    padding: 0.75rem 1.5rem;
+    width: 155px;
+    height: 48px;
+    outline: none;
+    border: none;
+    background-color: #2b3750;
+    color: white;
+    font-weight: 600;
+    border-radius: 7px;
+    margin: 0px 490px;
+    margin-top: 50px;
+    transition: all .2s;
+}
+
+.header__about__submain button:hover{
+    background-color: #34415f;
+}
+
+@media screen and (max-width:322px){
+    
+        .header__about__head{
+            flex-direction: column ;
+        }
+    
+        .header__about__submain {
+            position: absolute;
+            width: 90%;
+            top: 535px;
+            margin: 0 ;
+            padding: 2rem;
+            border-radius: .5rem;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 18px #d7d7d7;
+        }
+        .header__about__main h1 {
+            text-align: center;
+            width: 50px;
+            font-size: 1.65rem;
+            line-height: 2.2rem;
+            font-weight: 700;
+            width: 100%;
+        }
+        .header__about__main h1 span {
+            width: 50px;
+            font-size: 1.75rem;
+            line-height: 2.2rem;
+            font-weight: 800;
+            width: 100%;
+        }
+
+        /* .submain__box{
+            flex-direction: row !important;
+            justify-content: center;
+        } */
+
+        .header__about__main {
+            padding-top: 50px;
+        }
+
+        .header__about__main p {
+            width: 300px;
+        text-align: center;
+            font-size: .87rem;
+            line-height: 1.2rem;
+            color: #000;
+            font-weight: 400;
+            margin-top: 50px;
+        }
+
+        .header__about__submain__top{
+            flex-direction: column;
+        }
+
+
+        .about__submain__tech {
+            padding: 0 10px;
+            margin-top: 50px;
+        }
+
+        .about__submain__tech__img{
+            justify-content: start;
+        }
+
+        .header__about__submain button {
+            padding: 0.75rem 1.5rem;
+            width: 155px;
+            height: 48px;
+            outline: none;
+            border: none;
+            background-color: #2b3750;
+            color: white;
+            font-weight: 600;
+            border-radius: 7px;
+            margin: 0px 35px;
+            margin-top: 50px;
+            transition: all .2s;
+        }
+
+        .about__submain__tech p {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            padding: 0;
+            color: grey;
+        }
+
+        .submain__tech img {
+            width: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .submain__tech h1 {
+            font-size: 1.15rem;
+            line-height: 2rem;
+            margin-left: 10px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .submain__box img {
+            width: 1.5rem;
+            min-width: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about__submain__tech{
+            padding: 0;
+        }
+
+        .header__about {
+            background-color: #caf0f8;
+            padding: 1rem;
+            height: 880px;
+            margin-bottom: 650px;
+            /* margin-top: 50px; */
+            position: relative;
+        }
+}

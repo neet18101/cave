@@ -119,7 +119,7 @@ const HandPicked = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
         <div className="post-box">
           <div className="post-heading">
             <div className="heading-box">

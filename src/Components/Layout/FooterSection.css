@@ -26,3 +26,42 @@
     
     word-wrap: break-word;
     }
+
+    @media screen and (max-width:322px){
+        .footer__container{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #footerSection .footerleft_text {
+            color: white;
+            font-size: 35px;
+            font-weight: 500;
+            line-height: 36.87px;
+            word-wrap: break-word;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        #footerSection span {
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 5px 35px;
+            border-radius: 5px;
+            margin-bottom: 40px;
+            text-align: center;
+            margin-left: 60px;
+        }
+
+        #footerSection {
+            background: #6155df;
+            padding: 0px 0px;
+        }
+
+        .footer__para{
+            text-align: center;
+            font-size: 14px;
+        }
+    }

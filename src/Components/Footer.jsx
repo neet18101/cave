@@ -112,13 +112,13 @@ const Footer = () => {
                 <section className>
                     <div className="row text-center">
                         <ul className='list-inline'>
-                            <li className='list-inline-item' style={{color:'#5B5B5B'}}>© copyright 2023</li>
-                            <li className='list-inline-item' style={{color:'#5B5B5B'}}><span style={{paddingRight:'10px'}}>&#x2022;</span> Bachelors cave</li>
-                            <li className='list-inline-item' style={{color:'#5B5B5B'}}><span style={{paddingRight:'10px'}}>&#x2022;</span> All rights reserved</li>
+                            <li className='list-inline-item' style={{ color: '#5B5B5B' }}>© copyright 2023</li>
+                            <li className='list-inline-item' style={{ color: '#5B5B5B' }}><span style={{ paddingRight: '10px' }}>&#x2022;</span> Bachelors cave</li>
+                            <li className='list-inline-item' style={{ color: '#5B5B5B' }}><span style={{ paddingRight: '10px' }}>&#x2022;</span> All rights reserved</li>
                         </ul>
 
                     </div>
-                   
+
                 </section>
 
 

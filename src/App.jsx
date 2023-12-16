@@ -5,6 +5,9 @@ import Testing from "./Pages/Testing";
 import Signup from "./Pages/Signup";
 import LoginPage from "./Pages/Login/LoginPage";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
+import Listing from "./Pages/ListPropertys/Listing";
+import Profile from "./Pages/Profile/Profile";
+import Filter from "./Pages/Filter/Filter";
 
 function App() {
   return (
@@ -14,9 +17,13 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path='/product-details' element={<ProductDetails />} />
+        <Route path='/listing' element={<Listing />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/filter' element={<Filter />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+  

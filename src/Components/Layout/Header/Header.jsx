@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../../Pages/Testing.css";
+import "./Header.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import Button from "@mui/material/Button";
@@ -72,15 +73,15 @@ const Header = () => {
               : "navbar navbar-expand-lg navbar-sticky"
           }`}
         >
-          <div className="container">
+          <div className="container-fluid nav__padding">
             <a className="navbar-brand logoName" href="#">
               {active === true ? (
                 <>
-                  <img
+                  {/* <img
                     decoding="async"
                     src="/icons/pajamas_hamburger.svg"
                     className="img-fluid w-25 navbar-brand-regular px-3"
-                  />
+                  /> */}
 
                   <img
                     decoding="async"
@@ -90,15 +91,15 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <img
+                  {/* <img
                     decoding="async"
                     src="/icons/vector.svg"
                     className="img-fluid w-25 navbar-brand-regular px-3"
-                  />
+                  /> */}
 
                   <img
                     decoding="async"
-                    src="/icons/brand.svg"
+                    src="/icons/brand2.svg"
                     className="img-fluid navbar-brand-sticky"
                   />
                 </>
@@ -125,7 +126,7 @@ const Header = () => {
                     href="#home"
                   >
                     <form action="" className="">
-                      <img src="/icons/vector1.svg" alt="" />
+                      <img src="/image/Vector.png" alt="" />
                     </form>
                   </a>
                 </li>
@@ -146,7 +147,7 @@ const Header = () => {
                             fontWeight: "bold",
                           }
                         : {
-                            color: "#fff",
+                            color: "#000",
                             textTransform: "none",
                             fontWeight: "bold",
                           }
@@ -155,16 +156,16 @@ const Header = () => {
                     I’m an owner <KeyboardArrowDownIcon />
                   </a>
                   <div
-                    className="dropdown-menu"
+                    className="dropdown-menu dropdown__menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <a className="dropdown-item" href="#">
+                    <Link to={"/listing"} className="dropdown-item">
                       List Property
-                    </a>
+                    </Link>
                     <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="/login">
+                    <Link className="dropdown-item" to="/login">
                       Login
-                    </a>
+                    </Link>
                     <div className="dropdown-divider" />
                     <Link className="dropdown-item" to="/signup">
                       Signup
@@ -172,203 +173,152 @@ const Header = () => {
                   </div>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link scroll" href="#app-screenshots">
+                  <Link to="/signup" className="nav-link scroll">
                     <Button
                       variant="outlined"
-                      style={active ?{
-                        color: "#000",
-                        borderColor: "#000",
-                        padding: "0px 15px",
-                        textTransform: "capitalize",
-                      }: {
-                        color: "#fff",
-                        borderColor: "#fff",
-                        padding: "0px 15px",
-                        textTransform: "capitalize",
-                      }}
+                      style={
+                        active
+                          ? {
+                              color: "#000",
+                              borderColor: "#000",
+                              padding: "0px 15px",
+                              textTransform: "capitalize",
+                            }
+                          : {
+                              color: "#000",
+                              borderColor: "#000",
+                              padding: "0px 15px",
+                              textTransform: "capitalize",
+                            }
+                      }
                     >
                       Register
                     </Button>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
       </header>
-      <section id="home">
-        <div className="container">
-          <div className="hero-inner" />
-          <div className="hero-item" />
-          <div className="row align-items-center">
-            <div className="col-sm-12 col-lg-6">
-              <div className="home_text">
-                <h1 className="">
-                  Discover a place <br />
-                  you will love to live
-                </h1>
-                <span className="connect">
-                  Connect with more than 75K renters looking for new homes using
-                  our comprehensive marketing platform.
-                </span>
+      <section className="banner-section">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-8">
+              <div className="row r">
+                <div className="col-md-8 banner-heading hero__inne">
+                  <div className="hero-inner " />
 
-                {/* Search Bar start */}
-
-                <form action="">
-                  <div className="row">
-                    <div className="col-lg-8">
-                      <div className="searchBar">
-                        <div className="row">
-                          <ul
-                            className="list-inline searchliButtom"
-                            style={{ marginBottom: "0px" }}
-                          >
-                            <li
-                              className="list-inline-item"
-                              style={{ width: "30%" }}
-                            >
-                              <select
-                                name=""
-                                id=""
-                                style={{
-                                  fontWeight: "600",
-                                  width: "60%",
-                                  padding: "5px",
-                                  border: "none",
-                                  outline: "none",
-                                }}
-                              >
-                                <option value="">City</option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                              </select>
-                            </li>
-                            <li className="list-inline-item">
-                              <input
-                                type="text"
-                                placeholder="Enter college/Street name..."
-                                className="searchRoom"
-                              />
-                            </li>
-                            <hr style={{ margin: "0px" }} />
-                          </ul>
-                        </div>
-                        <ul className="list-inline searchliButtom">
-                          <li className="list-inline-item">
-                            {" "}
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexRadioDefault1"
-                              >
-                                Full house
-                              </label>
-                            </div>
-                          </li>
-                          <li className="list-inline-item">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault2"
-                                defaultChecked
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="flexRadioDefault2"
-                              >
-                                Pg/Hostel
-                              </label>
-                            </div>
-                          </li>
-                          <li className="list-inline-item">
-                            <img
-                              src="/icons/Vector2.svg"
-                              alt=""
-                              style={{ width: "20px", padding: "2px" }}
-                            />
-                            <select
-                              name=""
-                              id=""
-                              style={{
-                                fontWeight: "600",
-                                border: "none",
-                                outline: "none",
-                              }}
-                            >
-                              <option value="">Rooms</option>
-                              <option value=""></option>
-                              <option value=""></option>
-                              <option value=""></option>
-                            </select>
-                          </li>
-                          <li className="list-inline-item">
-                            <img
-                              src="/icons/Vector3.svg"
-                              alt=""
-                              style={{ width: "20px", padding: "2px" }}
-                            />
-                            <select
-                              name=""
-                              id=""
-                              style={{
-                                fontWeight: "600",
-                                border: "none",
-                                outline: "none",
-                              }}
-                            >
-                              <option value="">Tenant</option>
-                              <option value=""></option>
-                              <option value=""></option>
-                              <option value=""></option>
-                            </select>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="col-lg-4">
-                      <div className="searchButton">
-                        <SearchIcon /> Search
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                {/* Search Bar end */}
+                  <p className="discover_a">
+                    <span>Discover</span> a place <br /> you will love to live
+                  </p>
+                  <p className="hero__description">
+                    Connect with more than 75K renters looking for new homes
+                    using our comprehensive marketing platform.
+                  </p>
+                </div>
+                <div className="col-md-4">
+                  <img src="/image/ellipse.png" className="ellipse" alt="" />
+                </div>
               </div>
-              <div className="col-lg-12">
-                <div className="row">
-                  <div className="col-lg-6">
-                    <ul className="list-inline counterDiv">
-                      <li className="list-list-item counterDivItem">
-                        <span className="counter">{count1}+ </span>
-                        Property Ready
-                      </li>
-                    </ul>
+              <div className="row">
+                <div className="col-md-8">
+                  <form className="search-form container">
+                    <div className="row">
+                      <div className="col-md-3 col-6 line-left">
+                        <select name="" className="select-city">
+                          <option value="">City</option>
+                          <option value="">Lucknow</option>
+                          <option value="">Hardoi</option>
+                          <option value="">Kanpur</option>
+                        </select>
+                      </div>
+                      <div className="col-md-9 col-6">
+                        <input
+                          type="text"
+                          className="colloge-name"
+                          id="your-surname"
+                          name="your-surname"
+                          placeholder="Enter college/Street name..."
+                          required=""
+                        />
+                      </div>
+                      <hr style={{ marginTop: "0px", marginBottom: "0px" }} />
+                      <div className="col-md-3 col-6 bullect-point">
+                        <input className="form-check-input" type="radio" />
+                        <label
+                          className="form-check-label full_house"
+                          htmlFor="disabledFieldsetCheck"
+                        >
+                          Full House
+                        </label>
+                      </div>
+                      <div className="col-md-3 col-6 line-left bullect-point">
+                        <input className="form-check-input" type="radio" />
+                        <label
+                          className="form-check-label full_house"
+                          htmlFor="disabledFieldsetCheck"
+                        >
+                          Pg/Hostel
+                        </label>
+                      </div>
+                      <div className="col-md-3 col-6 line-left">
+                        <select name="" className="budget">
+                          <option value="">₹ Budget</option>
+                          <option value="Lucknow">Lucknow</option>
+                          <option value="">Hardoi</option>
+                          <option value="">Kanpur</option>
+                        </select>
+                      </div>
+                      <div className="col-md-3 col-6">
+                        <select name="" className="budget">
+                          <option value="">BHK Types</option>
+                          <option value="">Lucknow</option>
+                          <option value="">Hardoi</option>
+                          <option value="">Kanpur</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div className="col-md-4">
+                  <button
+                    className="d-flex box-search  me-2"
+                    type="search"
+                    aria-label="Search"
+                  >
+                    {/* <input
+                      className="form-control me-2"
+                      type="search"
+                      placeholder="Search"
+                      aria-label="Search"
+                    /> */}
+                    Search
+                  </button>
+                </div>
+              </div>
+              <div className="row counter-row">
+                <div className="col-md-6 col-6 vertical">
+                  <div className="counter-item vertical__1  d-flex ">
+                    <h1>{count1}+</h1>
+                    <h4>
+                      Property <br /> Ready
+                    </h4>
                   </div>
-                  <div className="col-lg-6">
-                    <ul className="list-inline counterDiv">
-                      <li className="list-list-item counterDivItem">
-                        <span className="counter">{count2}+ </span>
-                        Happy Customers
-                      </li>
-                    </ul>
+                </div>
+
+                <div className="col-md-6 col-6">
+                  <div className="counter-item d-flex">
+                    <h1>{count2}+</h1>
+                    <h4>
+                      Happy <br /> Customers
+                    </h4>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-lg-6">
-              <div className="home-image">
-                <img className="img-fluid" alt src="/building2.png" />
-                <img className="img-fluid" alt src="/building.png" />
-              </div>
+            <div className="col-md-4">
+              <img src="/image/banner-right.png" alt="" width="100%" />
             </div>
           </div>
         </div>

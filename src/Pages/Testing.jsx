@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { BorderColor } from "@mui/icons-material";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 // import FormControl from '@mui/material/FormControl';
 
 const Testing = () => {
@@ -35,14 +35,11 @@ const Testing = () => {
     const updateCounter = () => {
       const currentTime = Date.now();
       const elapsedTime = currentTime - startTime;
-
       if (elapsedTime < duration) {
         const progress = elapsedTime / duration;
-
         // Update each counter independently
         setCount1(Math.ceil(startCount + progress * (endCount1 - startCount)));
         setCount2(Math.ceil(startCount + progress * (endCount2 - startCount)));
-
         requestAnimationFrame(updateCounter);
       } else {
         // Ensure the counters reach their final values
@@ -166,12 +163,17 @@ const Testing = () => {
 
                 <form action="">
                   <div className="row">
-
                     <div className="col-lg-8">
                       <div className="searchBar">
                         <div className="row">
-                          <ul className="list-inline searchliButtom" style={{ marginBottom: '0px' }}>
-                            <li className="list-inline-item" style={{ width: '30%' }}>
+                          <ul
+                            className="list-inline searchliButtom"
+                            style={{ marginBottom: "0px" }}
+                          >
+                            <li
+                              className="list-inline-item"
+                              style={{ width: "30%" }}
+                            >
                               <select
                                 name=""
                                 id=""
@@ -196,7 +198,7 @@ const Testing = () => {
                                 className="searchRoom"
                               />
                             </li>
-                            <hr style={{ margin: '0px' }} />
+                            <hr style={{ margin: "0px" }} />
                           </ul>
                         </div>
                         <ul className="list-inline searchliButtom">
@@ -283,11 +285,9 @@ const Testing = () => {
                       <div className="searchButton">
                         <SearchIcon /> Search
                       </div>
-
                     </div>
                   </div>
                 </form>
-
 
                 {/* Search Bar end */}
               </div>

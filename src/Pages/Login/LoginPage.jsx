@@ -5,31 +5,19 @@ import "./Login.css";
 
 function LoginPage() {
   let initialData = {
-    name: "",
     email: "",
     phone_number: "",
-    password: "",
-    agree: "",
   };
   const [visible, setVisible] = useState("");
   const [formData, setFormData] = useState(initialData);
   const [formErrors, setFormErrors] = useState(initialData);
   useEffect(() => {
     // Implement form validation here
-    const { name, email, phone, password, agree } = formData;
+    const { email, password, agree } = formData;
     const errors = {};
-    if (!name) {
-      errors.name = "Name is required";
-    }
-
     if (!email || !email.includes("@")) {
       errors.email = "Valid email is required";
     }
-
-    if (!phone || phone.length !== 10) {
-      errors.phone = "Phone number must be 10 digits";
-    }
-
     if (!password || password.length < 6) {
       errors.password = "Password must be at least 6 characters";
     }
@@ -38,13 +26,21 @@ function LoginPage() {
     } else {
       errors.agree = "";
     }
-
     setFormErrors(errors);
   }, [formData]);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (Object.values(formErrors).every((error) => !error)) {
+      // Form is valid, you can proceed with form submission here
+      console.log("=========>", formData);
+    } else {
+      alert("Please fix the form errors before submitting");
+    }
   };
 
   return (
@@ -52,9 +48,9 @@ function LoginPage() {
       <section className="loginSection">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-12">
               <div className="logoLogin text-center">
-                <img src="/icons/brand.svg" alt="" width={150} />
+                <img src="/image/brand (1).png" alt="" width={150} />
                 <br />
                 <span
                   style={{
@@ -67,111 +63,128 @@ function LoginPage() {
                 </span>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-12">
               <div className="loginForm">
                 <div className="row">
                   <h1 className="loginText">Login</h1>
-                  <p style={{ paddingLeft: "50px" }}>
+                  <p style={{ paddingLeft: "50px" }} className="login__para">
                     Enter your credentials and get ready to explore
                   </p>
                 </div>
 
-                <form id="ownerSignup" action="" style={{ marginTop: "50px" }}>
+                <form onSubmit={handleSubmit} id="ownerSignup" action="" style={{ marginTop: "50px" }}>
                   <div className="form-group mb-3" style={{ width: "100%" }}>
-                    <div className="text-left loginWidth">
+                    <div className="text-left loginWidth d-flex flex-column justify-content-center align-item-center">
                       <img
-                        src="/icons/email.svg"
-                        style={{ width: "25px", paddingBottom: "5px" }}
+                        src="/image/email.png"
+                        // style={{ width: "25px", paddingBottom: "5px" }}
                       />
                       <input
                         type="text"
-                        className="emailInput"
+                        className="emailInput email__input"
                         placeholder="Your Email"
                         name="email"
-                        // value={formData.email}
-                        // onChange={handleInputChange}
+                        value={formData.email}
+                        onChange={handleInputChange}
                         required
                       />
-                      <div className="error">{formErrors.email}</div>
                     </div>
-                  </div>
-
-                  <div className="form-group mb-3" style={{ width: "100%" }}>
-                    <div className=" text-left loginWidth">
-                      <img
-                        src="/icons/password.svg"
-                        style={{ width: "25px", paddingBottom: "5px" }}
-                      />
-                      <input
-                        type={visible ? "text" : "password"}
-                        className="emailInput"
-                        placeholder="Password"
-                        name="password"
-                        // value={formData.password}
-                        // onChange={handleInputChange}
-                        required
-                      />
-                      {visible ? (
-                        <VisibilityIcon
-                          style={{ color: "#909090" }}
-                          onClick={() => setVisible(false)}
+                    <div
+                      className="form-group mb-3 mt-4"
+                      style={{ width: "100%" }}
+                    >
+                      <div className=" text-left loginWidth">
+                        <img
+                          src="/image/password.png"
+                          // style={{ width: "25px", paddingBottom: "5px" }}
                         />
-                      ) : (
-                        <VisibilityOffIcon
-                          ilityOffIcon
-                          style={{ color: "#909090" }}
-                          onClick={() => setVisible(true)}
-                        />
-                      )}
-                    </div>
-                  </div>
-                  <div className="row mb-4 mt-4">
-                    <div className="col d-flex justify-content-center">
-                      {/* Checkbox */}
-                      <div className="form-check">
                         <input
-                          className="form-check-input "
-                          type="checkbox"
-                          name="agree"
-                          checked={formData.agree}
+                          type={visible ? "text" : "password"}
+                          className="emailInput email__input"
+                          placeholder="Password"
+                          name="password"
+                          value={formData.password}
                           onChange={handleInputChange}
+                          required
                         />
-                        <label
-                          className="form-check-label"
-                          htmlFor="form2Example31"
-                        >
-                          {" "}
-                          Remember me{" "}
-                        </label>
+                        {visible ? (
+                          <VisibilityIcon
+                            style={{
+                              color: "#909090",
+                              position: "absolute",
+                              bottom: "5px",
+                              right: "0px",
+                            }}
+                            onClick={() => setVisible(false)}
+                          />
+                        ) : (
+                          <VisibilityOffIcon
+                            style={{
+                              color: "#909090",
+                              position: "absolute",
+                              bottom: "5px",
+                              right: "0px",
+                            }}
+                            onClick={() => setVisible(true)}
+                          />
+                        )}
                       </div>
                     </div>
-                    <div className="col">
-                      {/* Simple link */}
-                      <a
-                        href="#!"
-                        style={{ color: "#5E17EB", fontWeight: "500" }}
-                      >
-                        Forgot password?
-                      </a>
+                    <div className="row mb-4 mt-4">
+                      <div className="col d-flex justify-content-center">
+                        {/* Checkbox */}
+                        <div className="form-check">
+                          <input
+                            className="form-check-input "
+                            type="checkbox"
+                            name="agree"
+                            checked={formData.agree}
+                            onChange={handleInputChange}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor="form2Example31"
+                          >
+                            {" "}
+                            Remember me{" "}
+                          </label>
+                        </div>
+                      </div>
+                      <div className="col">
+                        {/* Simple link */}
+                        <a
+                          href="#!"
+                          style={{ color: "#5E17EB", fontWeight: "500" }}
+                        >
+                          Forgot password?
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-center" style={{ padding: "0px 40px" }}>
-                    <button
-                      type="submit"
-                      class="w-100 btn btn-primary btn-lg btn-block"
-                      style={{ background: "#5E17EB", padding: "5px 0px" }}
+                    <div
+                      className="text-center"
+                      style={{ padding: "0px 40px" }}
                     >
-                      Login
-                    </button>
-                  </div>
-
-                  <div className="social-icons mt-5" style={{overflow:'hidden'}}>
-                    <div className="row">
+                      <button
+                        type="submit"
+                        class="w-100 btn btn-primary btn-lg btn-block"
+                        style={{ background: "#5E17EB", padding: "5px 0px" }}
+                      >
+                        Login
+                      </button>
+                    </div>
+                    <div
+                      className="social-icons"
+                      style={{ overflow: "hidden" }}
+                    >
+                      {/* <div className="row"> */}
                       <div
                         className="googleButton"
-                        style={{ padding: "0px 50px"}}
+                        style={{ padding: "0px 50px" }}
                       >
-                        <button className="w-100 lognwithbutton" style={{border:"2px #5E17EB solid"}}>
+                        <button
+                          className="w-100 logn__withbutton"
+                          style={{ border: "2px #5E17EB solid" }}
+                        >
                           <img
                             src="/icons/devicon_google.svg"
                             alt=""
@@ -182,14 +195,17 @@ function LoginPage() {
                           </span>
                         </button>
                       </div>
+                      {/* </div> */}
                     </div>
-                  </div>
-
-                  {/* Register buttons */}
-                  <div className="text-center">
-                    <p>
-                      Don’t have an account? <a href="#!" style={{color:'#5E17EB'}}>Sign up now</a>
-                    </p>
+                    {/* Register buttons */}
+                    <div className="text-center">
+                      <p>
+                        Don’t have an account?{" "}
+                        <a href="#!" style={{ color: "#5E17EB" }}>
+                          Sign up now
+                        </a>
+                      </p>
+                    </div>
                   </div>
                 </form>
               </div>

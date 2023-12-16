@@ -1,37 +1,38 @@
 .signupLeft {
-  background: linear-gradient(
-    161deg,
-    rgba(128, 255, 96, 0.16) 0.51%,
-    rgba(5, 13, 187, 0.16) 100%
-  );
+  background: linear-gradient(161deg,
+      rgba(128, 255, 96, 0.16) 0.51%,
+      rgba(5, 13, 187, 0.16) 100%);
   height: 100vh;
-  /* width: 598px !important; */
+  position: relative;
+  width: 598px !important;
 }
+
 .signupParentDiv {
   padding: 130px !important;
 }
+
 .signupText {
   color: #4f4f4f;
-  font-size: 25.73px;
+  font-size: 18.73px;
   font-style: normal;
   font-weight: 400;
-  line-height: 133.523%; /* 34.355px */
+  line-height: 133.523%;
+  /* 34.355px */
   letter-spacing: 1.415px;
 }
+
 .signupImg {
   position: absolute;
   bottom: 20px;
   margin-right: -90px;
+  width: 450px;
+
 }
-.createAccountDiv {
-  color: #2c2c2c;
-  font-size: 48.28px !important;
-  font-weight: 600;
+
+.createAccountDiv h2 {
   margin-top: 50px;
-  line-height: 46.84px;
-  letter-spacing: 4.59px;
-  word-wrap: break-word;
 }
+
 /* signup form  */
 .button-box {
   width: 51%;
@@ -41,11 +42,12 @@
   position: relative;
   border-radius: 30px;
 }
+
 .toggle-btn {
   padding: 10px 39px;
   cursor: pointer;
   border: 0;
-  outline: none;  
+  outline: none;
   background: transparent;
   color: #747474;
 
@@ -63,6 +65,7 @@
   border-radius: 30px;
   transition: 0.5s;
 }
+
 .toggle-btn.active {
   color: white;
 }
@@ -71,15 +74,20 @@
   margin: 30px auto;
   text-align: center;
 }
+
 .loginWithgoogle {
   color: #6c63ff;
 }
+
 .lognwithbutton {
   border: 1px solid #6c63ff;
+  display: flex;
+  margin: 0 auto;
   outline: none;
   border-radius: 5px;
   padding: 8px 70px;
 }
+
 .account__login--divide {
   text-align: center;
   position: relative;
@@ -88,6 +96,7 @@
   margin: 0 auto;
   width: 30%;
 }
+
 .account__login--divide:before {
   position: absolute;
   content: "";
@@ -99,6 +108,7 @@
   -webkit-transform: translatey(-50%);
   transform: translatey(-50%);
 }
+
 .account__login--divide__text {
   padding: 0 0.8rem;
   display: inline-block;
@@ -107,11 +117,16 @@
   font-weight: 500;
   color: #898989;
 }
+
 .emailInput {
   border: none;
+  top: 40px;
+  left: 10px;
+  position: relative;
   padding-left: 20px;
   width: 80%;
 }
+
 .emailInput::placeholder {
   color: #909090;
   font-size: 18.73px;
@@ -120,20 +135,24 @@
   letter-spacing: 0.21px;
   word-wrap: break-word;
 }
+
 .emailInput:focus-visible {
   border: none;
   outline: none;
 }
+
 .field {
   border-bottom: 1px solid #909090;
   width: 50%;
   text-align: left;
   margin: 0 auto;
 }
+
 .field img {
   width: 25px;
   padding: 10px 0px;
 }
+
 .error {
   display: none;
 }
@@ -146,13 +165,172 @@
   border-radius: 5px;
   margin-top: 10px;
 }
+
 .createAccountButton span {
   color: #ffffff;
 }
+
 #ownerSignup {
   left: 50px;
 }
+
 #tenantSignup {
   left: 450px;
   display: none;
+}
+
+.iconsSignupPosition {
+  position: relative;
+  top: 5px;
+}
+
+.form__sign__up {
+  height: 50px;
+}
+
+.email__checkbox {
+  text-align: right;
+  width: 83%;
+  margin-left: 57px;
+  padding: 0px 65px;
+  margin-top: 30px;
+  color: #4F4E4E;
+  font-family: Inter;
+  font-size: 17.16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97.023%;
+  /* 16.649px */
+  letter-spacing: 0.172px;
+
+}
+
+.email__checkbox input {
+  width: 13.244px;
+  height: 13.244px;
+  flex-shrink: 0;
+  border-radius: 3.654px;
+  border: 1.37px solid #515151;
+}
+
+.email__checkbox label{
+  padding:0 ;
+  padding-right: 30px;
+}
+
+.email__checkbox span {
+  color: #5E17EB;
+  font-family: Inter;
+  font-size: 15.16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97.023%;
+  letter-spacing: 0.172px;
+}
+
+.already__acc {
+  /* padding-left: 75px; */
+  color: #555;
+  font-family: Inter;
+  font-size: 15.73px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97.023%;
+  /* 18.172px */
+  letter-spacing: -0.749px;
+}
+
+.signup__lower{
+  padding: 10px 0px;
+}
+
+@media screen and (max-width:322px) {
+  .signup__head {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signup__head a {
+    font-weight: 800 !important;
+    font-size: 30px !important;
+  }
+
+  .signupParentDiv {
+    padding: 34px !important;
+  }
+
+  .signupImg {
+    position: absolute;
+    bottom: 20px;
+    margin-right: 0px;
+    width: 450px;
+  }
+
+  .createAccountDiv h2 {
+    margin-top: 50px;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 7px;
+  }
+
+  .lognwithbutton {
+    border: 1px solid #6c63ff;
+    display: flex;
+    margin: 0 auto;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 55px;
+  }
+
+  .field {
+    border-bottom: 1px solid #909090;
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .email__checkbox {
+    text-align: right;
+    width: 83%;
+    margin-left: 0px;
+    padding: 0px;
+    margin-top: 30px;
+    color: #4F4E4E;
+    font-family: Inter;
+    font-size: 10.16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0%;
+    letter-spacing: 0px;
+  }
+
+  .email__checkbox label {
+    font-size: 13px;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .email__checkbox label span {
+    font-size: 13px;
+  }
+
+  .form__check {
+
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 3.5em;
+    margin-bottom: 0.125rem;
+
+  }
+
+  .createAccountButton {
+    padding: 10px 90px;
+}
+
+.already__acc {
+  padding-left: 0px;
+  text-align: center;
+}
 }

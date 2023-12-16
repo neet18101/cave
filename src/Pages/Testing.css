@@ -10,15 +10,19 @@ nav {
   display: flex;
   align-items: center;
   padding: 0px 25px;
-  background: #000;
+  background: #fff;
 }
 nav.active {
   background: #fff;
 }
+.bg-Black-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 12 8 / var(--tw-bg-opacity));
+}
 .fixed-top {
   animation-name: fadeInUp;
   animation-duration: 1s;
-  filter: drop-shadow(2px 4px 6px grey);
+  border-bottom: 1px solid #cecece;
 }
 @keyframes fadeInUp {
   from {
@@ -42,6 +46,9 @@ nav .logo {
 nav.active .logoName {
   color: #000;
 }
+.logoName img {
+  padding-right: 10px;
+}
 .imanower {
   color: #fff;
 }
@@ -51,7 +58,10 @@ nav.avtive #navbarDropdown a {
 nav .logoName {
   text-decoration: none;
   font-size: 20px;
-  color: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
 }
 nav .rightSide {
   flex: 1;
@@ -80,7 +90,8 @@ nav .innerRightSide {
   background-color: #fff;
   filter: blur(60px);
   width: 60px;
-  height: 115px;
+  height: 60px;
+  position: relative;
 }
 
 .discover-a-place-container {
@@ -174,7 +185,7 @@ label {
 #home {
   min-height: 100vh;
   height: 100%;
-  background: #000;
+  background: #100c08;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -230,4 +241,24 @@ label {
 .counter {
   font-size: 50px;
   font-weight: 700;
+}
+
+/* new code */
+@media (min-width: 768px) {
+  .md\:w-\[700px\] {
+    width: 700px;
+  }
+}
+.w-screen {
+  width: 100vw;
+}
+.h-\[400px\] {
+  height: 400px;
+}
+
+
+#user__name{
+  background-color: #fff;
+  border: none;
+  outline: none;
 }
