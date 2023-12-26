@@ -207,7 +207,7 @@ const SubNavbar = () => {
                       className="dropdown-menu dropdown__menu"
                       aria-labelledby="navbarDropdown"
                     >
-                      <Link to={"/listing"} className="dropdown-item">
+                      <Link to={"/owner"} className="dropdown-item">
                         List Property
                       </Link>
                       <div className="dropdown-divider" />

@@ -120,6 +120,7 @@
 
 .emailInput {
   border: none;
+  background:none;
   top: 40px;
   left: 10px;
   position: relative;

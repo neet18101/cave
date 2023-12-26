@@ -158,7 +158,7 @@ const Header = () => {
                       </button>
                       <ul className="dropdown-menu mt-2">
                         <li>
-                          <Link to={'/profile'} className="dropdown__item">
+                          <Link to={"/profile"} className="dropdown__item">
                             My Profile
                           </Link>
                         </li>
@@ -194,7 +194,11 @@ const Header = () => {
                         </li>
                         <hr />
                         <li>
-                          <a className="dropdown__item log__out" href="#" onClick={logOut}>
+                          <a
+                            className="dropdown__item log__out"
+                            href="#"
+                            onClick={logOut}
+                          >
                             Sign out
                           </a>
                         </li>
@@ -250,7 +254,7 @@ const Header = () => {
                       className="dropdown-menu dropdown__menu"
                       aria-labelledby="navbarDropdown"
                     >
-                      <Link to={"/listing"} className="dropdown-item">
+                      <Link to={"/owner"} className="dropdown-item">
                         List Property
                       </Link>
                       <div className="dropdown-divider" />

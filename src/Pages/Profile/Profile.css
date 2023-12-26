@@ -45,16 +45,23 @@ hr {
   /* 14.659px */
   letter-spacing: 0.076px;
 }
+.up__plan:hover {
+  color: #fff !important;
+}
 
 .up__plan {
-  color: #5e17eb;
+  color: #fff;
   font-family: Inter;
   font-size: 15.11px;
   font-style: normal;
   font-weight: 600;
   line-height: 97.023%;
   margin: 0 10px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  background: #5e17eb;
+  padding: 8px;
+  color: #fff;
+  border-radius: 5px;
   /* 14.66px */
   letter-spacing: 0.076px;
 }

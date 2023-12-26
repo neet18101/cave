@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+p {
+  font-family: Inter;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #eae9ef;
+}
+
+.owner__section {
+  background: url("/image/listbg.png");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 0px 5px grey;
+  padding: 0;
+  border-radius: 20px;
+}
+
+#owner-sec {
+  padding: 50px 150px;
+}
+
+.owner__right {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.owner__left__box1 {
+  border-radius: 30px 0px 0px 30px;
+  background: rgba(255, 255, 255, 0.29);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 43px;
+  padding: 12px 36px;
+  padding-bottom: 0;
+}
+
+.owner__left__box1 h1 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 97.023%;
+  margin-bottom: 20px;
+  /* 17.464px */
+  cursor: pointer;
+}
+
+.owner__left__box1 p img {
+  width: 16px;
+  height: 15px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.owner__left__box1 p {
+  color: #e4e2e2;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  cursor: pointer !important;
+
+  /* 13.583px */
+}
+
+.owner__left__box2 {
+  border-radius: 30px 0px 0px 30px;
+  background: rgba(255, 255, 255, 0.29);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 35px 36px;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  padding-bottom: 0;
+}
+
+.owner__left__box2 h1 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 97.023%;
+  margin-bottom: 20px;
+  /* 12.613px */
+}
+
+.owner__left__box2 p {
+  width: 200px;
+  color: #e4e2e2;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100.023%;
+  /* 9.702px */
+  letter-spacing: 0.1px;
+}
+
+.owner__left__box2 p span {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.owner__left__box2 h5 {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 9.702px */
+}
+
+.owner__left__box2 h5 span {
+  color: rgba(0, 0, 0, 0.4);
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+}
+
+.owner__right {
+  padding: 36px;
+}
+
+.owner__right h1 {
+  color: rgba(17, 28, 85, 0.9);
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 97.023%;
+  /* 23.285px */
+}
+
+.owner__form label {
+  color: #000;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.owner__form input {
+  border-radius: 5px;
+  border: 0.4px solid #909090;
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  color: #909090;
+  font-family: inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.owner__gender {
+  margin-bottom: 30px;
+}
+
+.owner__gender label {
+  color: #000;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.owner__property__type {
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 112px;
+}
+
+.owner__property__type h1 {
+  color: #000;
+  font-family: inter;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 20.375px */
+  margin-bottom: 25px;
+}
+
+.property__type__btn {
+  width: 500px;
+}
+
+.property__type__btn label:nth-child(2) {
+  width: 125px;
+  height: 43px;
+  flex-shrink: 0;
+  color: #747474;
+  font-family: inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 12.613px */
+  padding: 14px 10px;
+  border-radius: 5px;
+  border: 0.2px solid rgba(147, 141, 141, 0.8);
+  background: #fff;
+  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.15);
+  outline: none;
+  cursor: pointer;
+}
+
+.property__type__btn label:nth-child(6) {
+  width: 135px;
+  height: 43px;
+  flex-shrink: 0;
+  color: #747474;
+  font-family: inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 12.613px */
+  padding: 14px 10px;
+  border-radius: 5px;
+  border: 0.2px solid rgba(147, 141, 141, 0.8);
+  background: #fff;
+  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.15);
+  outline: none;
+  cursor: pointer;
+}
+
+.property__type__btn label:nth-child(4) {
+  width: 80px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 0.2px solid rgba(147, 141, 141, 0.8);
+  background: #fff;
+  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.15);
+  color: #747474;
+  cursor: pointer;
+  font-family: inter;
+  padding: 14px 8px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 12.613px */
+}
+
+.property__type__btn input[type="radio"]:checked + label {
+  border: 0.2px solid rgba(94, 23, 235, 0.4);
+  background: #6155df;
+  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.owner__card__sec {
+  background-color: #fff;
+}
+
+.owner__card__sec h1 {
+  color: #434343;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%; /* 31.047px */
+  margin: 50px 0;
+}
+
+.owner__card {
+  width: 300px;
+  height: 143px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 25px;
+  margin: 0 80px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.owner__card:hover {
+  background: rgba(97, 85, 223, 0.9);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.owner__card:hover .owner__card__content h3 {
+  color: #fff;
+}
+
+.owner__card:hover .owner__card__content p {
+  color: #fff;
+}
+
+.owner__card__content {
+  margin-left: 13px;
+}
+
+.owner__card__content h3 {
+  color: rgba(0, 0, 0, 0.9);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%; /* 18.434px */
+  margin-bottom: 15px;
+}
+
+.owner__card__content p {
+  color: #000;
+  font-family: inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 97.023%; /* 10.673px */
+}

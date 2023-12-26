@@ -100,7 +100,7 @@ const Signup = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="container-fluid">
+      <div className="container-fluid" style={{background:'#fff'}}>
         <div className="row">
           <div className="col-lg-6 signupLeft">
             <div
