@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+*{
+  scroll-behavior: smooth;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 20px;
+  padding: 20px;
+  width: 247px;
+  /* height: 300px; */
+  flex-shrink: 0;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
 .listing__body {
-  width: 90%;
-  height: 506px;
+  width: 98%;
+  /* height: 100%; */
   background: url("/image/listbg.png");
   background-repeat: no-repeat;
   margin: 0 auto;
+  background-size: cover;
+  border-radius: 20px;
 }
 
 .listing {
@@ -15,10 +33,10 @@
   font-family: Inter;
   font-size: 33px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 97.023%;
   /* 32.018px */
-  margin-left: 65px;
+  margin-left: 20px;
   margin-top: 30px;
   margin-bottom: 20px;
 }
@@ -44,10 +62,12 @@
 }
 
 .nav-pills .list__link.active,
-.nav-pills .show > .list__link {
+.nav-pills .show>.list__link {
   width: 100%;
   height: 69px;
   flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 600;
   border-radius: 45px 0px 0px 45px;
   background: rgba(255, 255, 255, 0.29);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -79,11 +99,11 @@
 }
 
 .list__link img {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 7px;
+  margin-left: 9px;
 }
 
 .lisitngTop {
@@ -94,7 +114,7 @@
 .list__link {
   color: #fff;
   font-family: Inter;
-  font-size: 18px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -103,6 +123,7 @@
 .divide {
   width: 100%;
   margin-bottom: 30px;
+  z-index: 0 !important;
 }
 
 .form-label {
@@ -115,11 +136,9 @@
 }
 
 .listing__pg {
-  padding: 0 42px;
-  padding-top: 25px;
-  padding-bottom: 57px;
-  width: 100%;
-  height: 506px !important;
+  padding: 25px;
+  width: 100% !important;
+  height: 100% !important;
   background-color: #fff;
   box-shadow: 0px 1px 4px grey;
   border-radius: 17px;
@@ -150,8 +169,8 @@
   flex-shrink: 0;
 }
 
-.btn-check:active + .btn__outline__primary,
-.btn-check:checked + .btn__outline__primary,
+.btn-check:active+.btn__outline__primary,
+.btn-check:checked+.btn__outline__primary,
 .btn__outline__primary.active,
 .btn__outline__primary.dropdown-toggle.show,
 .btn__outline__primary:active {
@@ -229,7 +248,317 @@
 }
 
 .listing__foot__btns {
-  padding: 0px 245px !important ;
+  padding: 0px 245px !important;
   margin: 20px 200px;
 }
 
+.form__label__listing {
+  color: #000;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 500 !important;
+line-height: normal;
+}
+
+.listing__email {
+  width: 100%;
+  background-color: #f9fafc;
+  height: 40px;
+}
+
+.listing__rent__box {
+  width: 100%;
+  height: 40px;
+  color: #212529;
+  background-color: #f9fafc;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.listing__rent__box p {
+  margin-top: 14px;
+  padding: 0 5px;
+}
+
+.listing__rent__box p:nth-child(1) {
+  font-weight: 600;
+}
+
+.listing__rent__box p:nth-child(2) {
+  font-style: italic;
+  color: grey;
+}
+
+.listing__rent__box input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+.dropdown__btn {
+  width: 100%;
+  height: 40px;
+  align-items: start;
+  text-align: start;
+  border: 1px solid #ced4da;
+  background-color: #f9fafc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.dropdown__btn i {
+  float: right;
+  color: #4e4e4e;
+}
+
+.dropdown__btn__bhk i {
+  padding-left: 233px;
+}
+
+.dropdown__menu__listing {
+  width: 100% !important;
+  height: 133px !important;
+  padding: 0 !important;
+}
+
+.dropdown__menu__listing__bhk {
+  width: 100% !important;
+  height: 266px !important;
+  padding: 0 !important;
+}
+
+.dropdown__menu__listing__facing {
+  width: 100% !important;
+  /* height: 400px; */
+  padding: 0 !important;
+}
+
+.dropdown__menu__listing__property {
+  width: 100% !important;
+  height: 177px !important;
+  padding: 0 !important;
+}
+
+
+.dropdown__menu__listing__balcony {
+  width: 100% !important;
+  height: 310px !important;
+  padding: 0 !important;
+}
+
+.dropdown__menu__listing__water {
+  width: 100% !important;
+  height: 133px !important;
+  padding: 0 !important;
+}
+
+.dropdown__menu__listing__bath {
+  width: 100% !important;
+  height: 266px !important;
+  padding: 0 !important;
+}
+
+.dropdown__item__listing {
+
+  padding: 12px 10px;
+}
+
+.drop__down {
+  position: relative;
+  background-color: rgb(233 233 233) !important;
+}
+
+.dropdown__menu__property {
+  width: 100% !important;
+  height: 45px !important;
+  padding: 0 !important;
+}
+
+.locality__location button {
+  color: rgba(17, 28, 85, 0.9);
+  font-family: Inter;
+  font-size: 20px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  outline: nome;
+  border: none;
+  background-color: transparent;
+}
+
+.locality__location p {
+  color: grey;
+  font-size: 12px;
+}
+
+.locality__map__listing img {
+  width: 32px;
+  height: 32px;
+}
+
+.amenities__box {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: #f9fafc;
+  height: 50px;
+}
+
+.amenities__box img {
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+
+.amenities__btn label{
+  width: 48px;
+  height: 32px;
+  padding: 6px 12px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.amenities__btn0 input[type="radio"]:checked + .gym__no0{
+  border: 1px solid orangered;
+  background-color: rgba(255, 150, 112, 0.145);
+}
+
+.amenities__btn0 input[type="radio"]:checked + .gym__yes0{
+  border: 1px solid rgb(1, 192, 1);
+  background-color: rgba(1, 192, 1, 0.212);
+}
+
+.amenities__btn1 input[type="radio"]:checked + .gym__no1{
+  border: 1px solid orangered;
+  background-color: rgba(255, 150, 112, 0.145);
+}
+
+.amenities__btn1 input[type="radio"]:checked + .gym__yes1{
+  border: 1px solid rgb(1, 192, 1);
+  background-color: rgba(1, 192, 1, 0.212);
+}
+
+.amenities__btn2 input[type="radio"]:checked + .gym__no2{
+  border: 1px solid orangered;
+  background-color: rgba(255, 150, 112, 0.145);
+}
+
+.amenities__btn2 input[type="radio"]:checked + .gym__yes2{
+  border: 1px solid rgb(1, 192, 1);
+  background-color: rgba(1, 192, 1, 0.212);
+}
+
+.amenities__btn3 input[type="radio"]:checked + .gym__no3{
+  border: 1px solid orangered;
+  background-color: rgba(255, 150, 112, 0.145);
+}
+
+.amenities__btn3 input[type="radio"]:checked + .gym__yes3{
+  border: 1px solid rgb(1, 192, 1);
+  background-color: rgba(1, 192, 1, 0.212);
+}
+
+
+
+/* <=============================Gallery ===========================> */
+
+.gallery__img__upload {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 48px 8px;
+}
+
+.gallery__img__upload img {
+  width: 32px;
+  height: 32px;
+}
+
+.img__upload__head {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.img__upload__head h1 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.img__upload__head p {
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: rgb(156 163 175);
+}
+
+.gallery__img__upload label {
+  background-image: linear-gradient(90deg, #4776e6 0, #8e54e9 51%, #4776e6);
+  background-size: 200% auto;
+  display: block;
+  font-weight: 600;
+  padding: .7rem 1rem;
+  cursor: pointer;
+  transition: .7s;
+  color: #fff;
+  border-radius: .5rem;
+}
+
+.amenities__checks img {
+  margin: 0 10px;
+}
+
+.amenities__checks p {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-top: 4px;
+  margin: 0;
+}
+
+.avail-box{
+  /* width: 100px !important; */
+  padding: .75rem 3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: .5rem ;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s;
+  margin-right: 10px;
+}
+
+.avail-box:hover{
+  border: 1px solid cyan !important;
+  background-color: rgba(102, 251, 251, 0.181) !important;
+}
+
+.avail-box h1{
+  color: #000 !important;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: rgb(20 33 61);
+}
+
+.avail-box p{
+  color: #000 !important;
+  font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+.avail__check input[type="radio"]:checked + label{
+  background-color: rgba(102, 251, 251, 0.181) ;
+  border: 1px solid rgb(0, 152, 152);
+}

@@ -9,6 +9,7 @@ import Listing from "./Pages/ListPropertys/Listing";
 import Profile from "./Pages/Profile/Profile";
 import Filter from "./Pages/Filter/Filter";
 import Owner from "./Pages/Owner/Owner";
+import PGlist from "./Pages/PGList/PGlist ";
 
 function App() {
   return (
@@ -17,16 +18,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path='/product-details' element={<ProductDetails />} />
-        <Route path='/owner' element={<Owner />} />
+        <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/owner" element={<Owner />} />
+        <Route path="/pglist" element={<PGlist />} />
 
-        <Route path='/listing' element={<Listing />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/filter' element={<Filter />} />
+        <Route path="/list-property" element={<Listing />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/filter" element={<Filter />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
-  

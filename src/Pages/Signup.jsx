@@ -100,7 +100,7 @@ const Signup = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="container-fluid" style={{background:'#fff'}}>
+      <div className="container-fluid" style={{ background: "#fff" }}>
         <div className="row">
           <div className="col-lg-6 signupLeft">
             <div
@@ -323,7 +323,7 @@ const Signup = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="col-12">
                       <div className="form-check form__check">
                         <div className="email__checkbox">

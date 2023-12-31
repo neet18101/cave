@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import SubNavbar from "../../Components/Layout/Header/SubNavbar";
 import "./owner.css";
 import Footer from "../../Components/Footer";
+import { useNavigate } from "react-router-dom";
+import { userAction } from "../../Redux/Action/userAction";
+import { useDispatch } from "react-redux";
 
 function Owner() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     ownerName: "",
     ownerNumber: "",
@@ -50,13 +55,28 @@ function Owner() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const isValid = validateForm();
-
-    if (isValid) {
-      // Handle form submission logic here
-      console.log("Form submitted:", formData);
+    // Assuming this code is inside a function or an event handler
+    if (formData.ownerPropertyType === "pg") {
+      // Redirect to the 'pglist' page
+      navigate("/pglist", { replace: true });
+    } else {
+      // Redirect to the 'list-property' page
+      const owenerData = {
+        name: formData.ownerName,
+        phonenumber: formData.ownerNumber,
+        email: formData.ownerEmail,
+        password: formData.ownerPassword,
+        userFor: formData.ownerGender,
+        propertyType: formData.ownerPropertyType,
+        userType: 2,
+      };
+      dispatch(userAction(owenerData));
+      // navigate("/list-property", { replace: true });
     }
+
+    // Make sure to return some JSX, component, or null if needed
+    return null;
   };
 
   const handleChange = (e) => {
@@ -249,7 +269,11 @@ function Owner() {
           </div>
         </div>
         <div className="listing__foot__btns d-flex">
-          <button className="listing__foot__btn-2" type="submit" onClick={handleSubmit}>
+          <button
+            className="listing__foot__btn-2"
+            type="submit"
+            onClick={handleSubmit}
+          >
             Continue
           </button>
         </div>

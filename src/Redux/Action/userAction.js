@@ -26,14 +26,22 @@ export const userAction = (user) => async (dispatch) => {
       toast.error(data.msg, {
         duration: 3000, // Toast will be shown for 3 seconds
       });
-    } else {
+    } else if (data.success === true) {
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
-      setTimeout(() => {
-        window.location.href = "/login";
-      }, 4000);
-      toast.success(data.msg, {
-        duration: 3000, // Toast will be shown for 3 seconds
-      });
+      if (data.data.type === 2) {
+        const redirectPath =
+          data.data.propertyType === "pg" ? "/pglist" : "/listproperty";
+        setTimeout(() => {
+          window.location.href = redirectPath;
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 4000);
+        toast.success(data.msg, {
+          duration: 3000, // Toast will be shown for 3 seconds
+        });
+      }
     }
   } catch (error) {
     toast.error("Registration Failed", {

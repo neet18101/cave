@@ -147,21 +147,33 @@ const ProductDetails = () => {
           </div>
 
           <div className="col-lg-7">
-            <div style={{
-              position:"relative"
-            }}>
+            <div
+              style={{
+                position: "relative",
+              }}
+            >
               <img className="w-100" src="/image/rectangle.png" alt="" />
               <div>
-                <button style={{
-                  position: "absolute",
-                  top: "10px",
-                  left:"10px"
-                }} className="product__img__btn-1">₹ 1600</button>
-                <button style={{
-                  position: "absolute",
-                  top: "10px",
-                  left:"140px"
-                }} className="product__img__btn-2">Rent</button>
+                <button
+                  style={{
+                    position: "absolute",
+                    top: "10px",
+                    left: "10px",
+                  }}
+                  className="product__img__btn-1"
+                >
+                  ₹ 1600
+                </button>
+                <button
+                  style={{
+                    position: "absolute",
+                    top: "10px",
+                    left: "140px",
+                  }}
+                  className="product__img__btn-2"
+                >
+                  Rent
+                </button>
               </div>
             </div>
           </div>
@@ -223,8 +235,18 @@ const ProductDetails = () => {
                           <h4>Your request is being shared with the owner</h4>
                         </div>
                         <div className="modal__detail d-flex justify-content-between align-items-center">
-                          <p className="text-left p-0"> We sent owner details shortly to your <span style={{color:'#000',fontWeight:'700'}}>+917451871829</span> and  <span style={{color:'#000',fontWeight:'700'}}>arcancraze@gmail.com.</span> </p>
-                         
+                          <p className="text-left p-0">
+                            {" "}
+                            We sent owner details shortly to your{" "}
+                            <span style={{ color: "#000", fontWeight: "700" }}>
+                              +917451871829
+                            </span>{" "}
+                            and{" "}
+                            <span style={{ color: "#000", fontWeight: "700" }}>
+                              arcancraze@gmail.com.
+                            </span>{" "}
+                          </p>
+
                           {/* <h4>
                             We sent owner details shortly to your
                             <span>+917451871829</span> and
@@ -465,7 +487,7 @@ const ProductDetails = () => {
             <div className="col-lg-5">
               <div className="row mb-4">
                 <div className="col-md-12">
-                  <h3 style={{fontWeight:'800'}}>Similar Properties</h3>
+                  <h3 style={{ fontWeight: "800" }}>Similar Properties</h3>
                 </div>
               </div>
               <div className="row similarPropertiesSticky">
@@ -854,7 +876,6 @@ const ProductDetails = () => {
                     </div>
                   </div>
                 </div>
-               
               </div>
             </div>
           </div>

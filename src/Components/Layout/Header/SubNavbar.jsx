@@ -89,12 +89,12 @@ const SubNavbar = () => {
             </button>
             {sortedData && sortedData != null ? (
               <>
-                <div class="nav__right d-flex justify-content-between align-items-center">
-                  <div class="user d-flex justify-content-start align-items-center">
+                <div className="nav__right d-flex justify-content-between align-items-center">
+                  <div className="user d-flex justify-content-start align-items-center">
                     <a href="#">
                       <img
                         src="image/account-circle.png"
-                        class="user__icon"
+                        className="user__icon"
                         alt="user account"
                       />
                     </a>
@@ -158,10 +158,10 @@ const SubNavbar = () => {
                       </ul>
                     </div>
                   </div>
-                  <a href="#" class="up__plan">
+                  <a href="#" className="up__plan">
                     Upgrade Plan
                   </a>
-                  <button class="nav__register">Register</button>
+                  <button className="nav__register">Register</button>
                 </div>
               </>
             ) : (
