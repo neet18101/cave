@@ -7,6 +7,7 @@ const PGlist = () => {
   return (
     <>
       <SubNavbar />
+      {/* <h1></h1> */}
       <section className="container-fluid listing">
         <h3 className="listing__title">List PG</h3>
         <div className="row">
