@@ -312,6 +312,8 @@ line-height: normal;
 .dropdown__btn i {
   float: right;
   color: #4e4e4e;
+  position: absolute;
+  right: 20px;
 }
 
 .dropdown__btn__bhk i {
