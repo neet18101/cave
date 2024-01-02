@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function Rental({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
+  const params = useParams();
   const [formData, setFormData] = useState({
     propertyAvailable: "",
     expectRent: "",
@@ -12,6 +14,7 @@ function Rental({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
     preferredTenant: "",
     furnishing: "",
     parking: "",
+    user_id: params.id,
   });
   const handleInputChange = (field, value) => {
     setFormData({

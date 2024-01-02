@@ -22,7 +22,7 @@ function App() {
         <Route path="/owner" element={<Owner />} />
         <Route path="/pglist" element={<PGlist />} />
 
-        <Route path="/list-property" element={<Listing />} />
+        <Route path="/list-property/:id" element={<Listing />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/filter" element={<Filter />} />
       </Routes>

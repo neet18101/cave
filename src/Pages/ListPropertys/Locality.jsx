@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function Locality({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
   // const [selectedItem, setSelectedItem] = useState("Select");
+  const params = useParams();
   const [formData, setFormData] = useState({
     city: "",
     locality: "",
     landmark: "",
+    user_id: params.id,
   });
   const handleInputChange = (field, value) => {
     setFormData({

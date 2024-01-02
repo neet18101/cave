@@ -29,8 +29,11 @@ export const userAction = (user) => async (dispatch) => {
     } else if (data.success === true) {
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
       if (data.data.type === 2) {
+        localStorage.setItem("ownerInfo", JSON.stringify(data.data));
         const redirectPath =
-          data.data.propertyType === "pg" ? "/pglist" : "/listproperty";
+          data.data.propertyType === "pg"
+            ? `/pglist/${data.data._id}`
+            : `/list-property/${data.data.id}`;
         setTimeout(() => {
           window.location.href = redirectPath;
         }, 2000);

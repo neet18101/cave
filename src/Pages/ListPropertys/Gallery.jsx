@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-function Gallery({ saveNext, activeTab, handleTabClick }) {
+function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
   const [images, setImages] = useState([]);
 
   const handleImageChange = (e) => {
@@ -32,9 +32,14 @@ function Gallery({ saveNext, activeTab, handleTabClick }) {
     setImages(updatedImages);
   };
   const handleSubmit = () => {
+    const imagesData = {
+      images: images,
+      user_id: localStorage.getItem("user_id"),
+    };
+    onChildDataChange(images);
+
     localStorage.setItem("gallery", JSON.stringify(images));
-    
-  }
+  };
   return (
     <>
       <div
@@ -66,7 +71,13 @@ function Gallery({ saveNext, activeTab, handleTabClick }) {
           </div>
         </div>
         {images.length > 0 && (
-          <div style={{display:'flex',flexWrap:'wrap',justifyContent:'center'}}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             {images.map((image, index) => (
               <div
                 key={index}
@@ -87,7 +98,14 @@ function Gallery({ saveNext, activeTab, handleTabClick }) {
                 />
                 <DeleteForeverIcon
                   onClick={() => handleImageDelete(index)}
-                  style={{ cursor: "pointer",top:'-40px', color: "#e0e0e0",right:"35px",borderRadius:"15px",background:'#232222' }}
+                  style={{
+                    cursor: "pointer",
+                    top: "-40px",
+                    color: "#e0e0e0",
+                    right: "35px",
+                    borderRadius: "15px",
+                    background: "#232222",
+                  }}
                 />
               </div>
             ))}
@@ -120,10 +138,13 @@ function Gallery({ saveNext, activeTab, handleTabClick }) {
               Back
             </button>
           )}
-          <button className="listing__foot__btn-2"  onClick={() => {
-                saveNext();
-                handleSubmit();
-              }}>
+          <button
+            className="listing__foot__btn-2"
+            onClick={() => {
+              saveNext();
+              handleSubmit();
+            }}
+          >
             Save & Next
           </button>
         </div>

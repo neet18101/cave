@@ -1,6 +1,15 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
-function Property({ saveNext, activeTab, handleTabClick,  isLastTab, onChildDataChange }) {
+function Property({
+  saveNext,
+  activeTab,
+  handleTabClick,
+  isLastTab,
+  onChildDataChange,
+}) {
+  const params = useParams();
+  console.log(params.id);
   const [selectedItem, setSelectedItem] = useState("Select");
   const [formData, setFormData] = useState({
     ownerName: "",
@@ -12,6 +21,7 @@ function Property({ saveNext, activeTab, handleTabClick,  isLastTab, onChildData
     propertyAge: "",
     facing: "",
     builtUpArea: "",
+    user_id: params.id,
   });
   const handleInputChange = (field, value) => {
     setFormData({
@@ -72,7 +82,6 @@ function Property({ saveNext, activeTab, handleTabClick,  isLastTab, onChildData
                   <li key={item}>
                     <a
                       className="dropdown-item dropdown__item__listing"
-                      
                       onClick={() => handleInputChange("apartmentType", item)}
                     >
                       {item}
@@ -122,7 +131,6 @@ function Property({ saveNext, activeTab, handleTabClick,  isLastTab, onChildData
                     <li key={item}>
                       <a
                         className="dropdown-item dropdown__item__listing"
-                        
                         onClick={() => handleInputChange("bhkType", item)}
                       >
                         {item}

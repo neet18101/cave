@@ -9,6 +9,7 @@ import Rental from "./Rental";
 import Amenities from "./Amenities";
 import Gallery from "./Gallery";
 import Schedule from "./Schedule";
+import axios from "axios";
 
 const Listing = () => {
   // Dynamic Navpills
@@ -66,31 +67,87 @@ const Listing = () => {
     setActiveTab(nextTab);
   };
   const isLastTab = activeTab === tabsData.length;
-  const [parentData, setParentData] = useState();
-  const [locality, setLocality] = useState();
-  const [rental, setRental] = useState();
+  const [parentData, setParentData] = useState("");
+  // const [locality, setLocality] = useState();
+  // const [rental, setRental] = useState();
 
-  const handleChildDataChange = (newData) => {
+  const config = {
+    headers: { Authorization: `Bearer ${import.meta.env.VITE_PUBLIC_TOKEN}` },
+  };
+  const handleChildDataChange = (newdata) => {
     // console.log(newData, "newData");
-    setParentData(newData);
-    localStorage.setItem("parentData", JSON.stringify(newData));
+    const updatedParentData = [...parentData, newdata];
+    axios.post(
+      `${import.meta.env.VITE_API_URL}/api/v1/property`,
+      newdata,
+      config
+    );
+
+    setParentData(updatedParentData);
+    localStorage.setItem("parentData", JSON.stringify(newdata));
   };
   const handleLocalityChange = (newdata) => {
-    setLocality(newdata);
+    axios.post(
+      `${import.meta.env.VITE_API_URL}/api/v1/locality`,
+      newdata,
+      config
+    );
+    const updatedParentData = [...parentData, newdata];
+
+    setParentData(updatedParentData);
     localStorage.setItem("locality", JSON.stringify(newdata));
   };
   const handleRentalChange = (newdata) => {
+    axios.post(
+      `${import.meta.env.VITE_API_URL}/api/v1/rental`,
+      newdata,
+      config
+    );
     localStorage.setItem("rental", JSON.stringify(newdata));
-    setRental(newdata);
+    const updatedParentData = [...parentData, newdata];
+
+    setParentData(updatedParentData);
   };
   const handleAmenitiesChange = (newdata) => {
+    axios.post(
+      `${import.meta.env.VITE_API_URL}/api/v1/amenities`,
+      newdata,
+      config
+    );
     localStorage.setItem("amenities", JSON.stringify(newdata));
+    const updatedParentData = [...parentData, newdata];
+
+    setParentData(updatedParentData);
   };
   const handleGalleryChange = (newdata) => {
+    axios.post(
+      `${import.meta.env.VITE_API_URL}/api/v1/gallery`,
+      newdata,
+      config
+    );
+
     localStorage.setItem("gallery", JSON.stringify(newdata));
+    const updatedParentData = [...parentData, newdata];
+
+    setParentData(updatedParentData);
   };
   const handleScheduleChange = (newdata) => {
+    axios.post(
+      `${import.meta.env.VITE_API_URL}/api/v1/schedule`,
+      newdata,
+      config
+    );
+    
     localStorage.setItem("schedule", JSON.stringify(newdata));
+    const updatedParentData = [...parentData, newdata];
+
+    setParentData(updatedParentData);
+    const parentDatas = JSON.parse(localStorage.getItem("parentData"));
+    const locality = JSON.parse(localStorage.getItem("locality"));
+    const rental = JSON.parse(localStorage.getItem("rental"));
+    const amenities = JSON.parse(localStorage.getItem("amenities"));
+    const gallery = JSON.parse(localStorage.getItem("gallery"));
+    const schedule = JSON.parse(localStorage.getItem("schedule"));
   };
 
   return (
