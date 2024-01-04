@@ -120,6 +120,7 @@ const Listing = () => {
     setParentData(updatedParentData);
   };
   const handleGalleryChange = (newdata) => {
+    console.log(newdata, "newdata");
     axios.post(
       `${import.meta.env.VITE_API_URL}/api/v1/gallery`,
       newdata,
@@ -137,17 +138,11 @@ const Listing = () => {
       newdata,
       config
     );
-    
+
     localStorage.setItem("schedule", JSON.stringify(newdata));
     const updatedParentData = [...parentData, newdata];
 
     setParentData(updatedParentData);
-    const parentDatas = JSON.parse(localStorage.getItem("parentData"));
-    const locality = JSON.parse(localStorage.getItem("locality"));
-    const rental = JSON.parse(localStorage.getItem("rental"));
-    const amenities = JSON.parse(localStorage.getItem("amenities"));
-    const gallery = JSON.parse(localStorage.getItem("gallery"));
-    const schedule = JSON.parse(localStorage.getItem("schedule"));
   };
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function Schedule({
   saveNext,
@@ -7,10 +8,12 @@ function Schedule({
   isLastTab,
   onChildDataChange,
 }) {
+  const param = useParams();
   const [formData, setFormData] = useState({
     availability: "",
     starttime: "",
     endtime: "",
+    user_id: param.id,
   });
   const handleInputChange = (field, value) => {
     setFormData({

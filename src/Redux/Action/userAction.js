@@ -14,7 +14,7 @@ const config = {
 
 export const userAction = (user) => async (dispatch) => {
   try {
-    console.log(user, "user");
+    // console.log(user, "user");
     dispatch({ type: USER_REGISTER_REQUEST });
     const { data } = await axios.post(
       `${import.meta.env.VITE_API_URL}/api/v1/register`,
@@ -29,7 +29,7 @@ export const userAction = (user) => async (dispatch) => {
     } else if (data.success === true) {
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
       if (data.data.type === 2) {
-        localStorage.setItem("ownerInfo", JSON.stringify(data.data));
+        localStorage.setItem("userInfo", JSON.stringify(data.data));
         const redirectPath =
           data.data.propertyType === "pg"
             ? `/pglist/${data.data._id}`

@@ -13,7 +13,6 @@ const SubNavbar = () => {
       setActive(false);
     }
   });
-
   const userData = JSON.parse(localStorage.getItem("userInfo"));
   const [sortedData, setSortedData] = useState("");
   // console.log(userData && userData.token,VITE_SECRET_KEY);

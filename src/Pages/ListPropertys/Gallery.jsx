@@ -1,44 +1,63 @@
 import React, { useState } from "react";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
+  const params =useParams()
   const [images, setImages] = useState([]);
+  const [previewImages, setPreviewImages] = useState([]);
 
   const handleImageChange = (e) => {
-    const files = e.target.files;
+    const selectedImages = Array.from(e.target.files);
 
-    if (files) {
-      // Read and add each selected image to the images array
-      const newImages = Array.from(files).map((file) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        return new Promise((resolve) => {
-          reader.onloadend = () => {
-            resolve(reader.result);
-          };
-        });
-      });
+    setImages((prevImages) => [...prevImages, ...selectedImages]);
 
-      // Update the state with the new images
-      Promise.all(newImages).then((imageDataUrls) => {
-        setImages((prevImages) => [...prevImages, ...imageDataUrls]);
-      });
-    }
+    const selectedPreviewImages = selectedImages.map((image) =>
+      URL.createObjectURL(image)
+    );
+
+    setPreviewImages((prevPreviewImages) => [
+      ...prevPreviewImages,
+      ...selectedPreviewImages,
+    ]);
   };
 
-  const handleImageDelete = (index) => {
+  const handleImageRemove = (index) => {
     const updatedImages = [...images];
     updatedImages.splice(index, 1);
     setImages(updatedImages);
-  };
-  const handleSubmit = () => {
-    const imagesData = {
-      images: images,
-      user_id: localStorage.getItem("user_id"),
-    };
-    onChildDataChange(images);
 
-    localStorage.setItem("gallery", JSON.stringify(images));
+    const updatedPreviewImages = [...previewImages];
+    updatedPreviewImages.splice(index, 1);
+    setPreviewImages(updatedPreviewImages);
+  };
+
+  const handleImageUpload = async () => {
+    const formData = new FormData();
+
+    images.forEach((image) => {
+      formData.append("images", image);
+    });
+    formData.append("user_id", params.id);
+
+    try {
+      const user_id =params.id
+      // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
+     
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/v1/gallery`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Upload successful:", response.data);
+    } catch (error) {
+      console.error("Error uploading images:", error);
+    }
   };
   return (
     <>
@@ -58,19 +77,20 @@ function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
           </div>
           <div>
             <label htmlFor="img-upload">Add Photos</label>
-
-            <input
-              type="file"
-              id="img-upload"
-              name="gallery-img"
-              hidden
-              accept="image/*"
-              onChange={handleImageChange}
-              multiple
-            />
+            <from encType="multipart/form-data">
+              <input
+                type="file"
+                id="img-upload"
+                name="gallery-img"
+                hidden
+                accept="image/*"
+                onChange={handleImageChange}
+                multiple
+              />
+            </from>
           </div>
         </div>
-        {images.length > 0 && (
+        {previewImages.length > 0 && (
           <div
             style={{
               display: "flex",
@@ -78,7 +98,7 @@ function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
               justifyContent: "center",
             }}
           >
-            {images.map((image, index) => (
+            {previewImages.map((image, index) => (
               <div
                 key={index}
                 style={{
@@ -97,7 +117,7 @@ function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
                   }}
                 />
                 <DeleteForeverIcon
-                  onClick={() => handleImageDelete(index)}
+                  onClick={() => handleImageRemove(index)}
                   style={{
                     cursor: "pointer",
                     top: "-40px",
@@ -142,7 +162,7 @@ function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
             className="listing__foot__btn-2"
             onClick={() => {
               saveNext();
-              handleSubmit();
+              handleImageUpload();
             }}
           >
             Save & Next
