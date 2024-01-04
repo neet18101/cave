@@ -86,6 +86,7 @@ const SubNavbar = () => {
             >
               <span className="ti-align-justify navbar-toggler-icon" />
             </button>
+            {}
             {sortedData && sortedData != null ? (
               <>
                 <div className="nav__right d-flex justify-content-between align-items-center">
