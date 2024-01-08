@@ -8,6 +8,7 @@ import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import Listing from "./Pages/ListPropertys/Listing";
 import Profile from "./Pages/Profile/Profile";
 import Filter from "./Pages/Filter/Filter";
+import Tenant from "./Pages/Profile/Tenant";
 import Owner from "./Pages/Owner/Owner";
 import PGlist from "./Pages/PGList/PGlist ";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/list-property" element={<Listing />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/filter" element={<Filter />} />
+        <Route path="/tenant" element={<Tenant />} />
       </Routes>
     </BrowserRouter>
   );

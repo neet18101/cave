@@ -45,6 +45,7 @@ hr {
   /* 14.659px */
   letter-spacing: 0.076px;
 }
+
 .up__plan:hover {
   color: #fff !important;
 }
@@ -122,7 +123,7 @@ hr {
 }
 
 .nav-pills .nav__link.active,
-.nav-pills .show > .nav__link {
+.nav-pills .show>.nav__link {
   color: #5e17eb;
   background-color: #fff;
   border-left: 3px solid purple;
@@ -186,7 +187,7 @@ hr {
 }
 
 .nav-pills .nav_link_botm.active,
-.nav-pills .show > .nav_link_botm {
+.nav-pills .show>.nav_link_botm {
   color: #5e17eb;
   background-color: #fff;
   border-left: none;
@@ -356,4 +357,390 @@ hr {
 
 .personal__info__item {
   margin-top: 25px;
+}
+
+/* ================== TENANT SPACES ==========================  */
+
+#tenant-space {
+  padding-left: 100px;
+  padding-right: 65px;
+}
+
+#tenant-space h1 {
+  color: #000;
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 25.226px */
+  letter-spacing: -0.39px;
+  margin: 45px 0;
+}
+
+.tenant__space {
+  margin-bottom: 200px;
+}
+
+.tenant__space__card {
+  width: 100%;
+  height: 179px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  border: 0.93px solid #E0E0E0;
+  background-color: #FFF !important;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  padding-left: 45px;
+  margin-bottom: 55px;
+  border-left: 4px solid #6155DF;
+}
+
+.tenant__card__left {
+  /* border: 2px solid black; */
+  padding-right: 40px;
+}
+
+.tenant__card__left h4 {
+  color: #6155DF;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 16.494px */
+  letter-spacing: -0.255px;
+  margin-bottom: 20px;
+}
+
+.tenant__card__left p {
+  width: 455px;
+  color: #555;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 18px */
+  letter-spacing: -0.225px;
+  margin-bottom: 20px;
+}
+
+.tenant__card__left button {
+  width: 167px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #6155DF;
+  box-shadow: 1px 0.5px 1px 0px rgba(0, 0, 0, 0.25);
+  color: #FFF;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97.023%;
+  /* 13.583px */
+  letter-spacing: -0.21px;
+  outline: none;
+  border: none;
+}
+
+.tenant__card__mid {
+  width: 1px;
+  height: 115px;
+  background: rgba(94, 23, 235, 0.20);
+}
+
+.tenant__card__right {
+  padding-right: 30px;
+  padding-top: 50px;
+}
+
+.tenant__card__right img {
+  width: 24px;
+  height: 17.455px;
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.tenant__view__profile {
+  width: 100%;
+  height: 75px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  border: 0.93px solid #E0E0E0;
+  background: #FFF;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  padding: 0 15px;
+}
+
+.tenant__view__profile h2 {
+  color: #6155DF;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 97.023%;
+  /* 16.494px */
+  letter-spacing: -0.255px;
+  /* margin: 0; */
+}
+
+.tenant__view__profile a {
+  color: #555;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 97.023%;
+  /* 16.494px */
+  letter-spacing: -0.255px;
+}
+
+.tenant__add__prop {
+  width: 100%;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  border: 0.93px solid #E0E0E0;
+  background: #FFF;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  padding: 0 15px;
+
+}
+
+.tenant__add__prop h2 {
+  color: #707070;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 97.023%;
+  /* 16.494px */
+  letter-spacing: -0.255px;
+  margin: 0;
+}
+
+.tenant__pills {
+  width: 100%;
+  /* height: 656px; */
+  flex-shrink: 0;
+  border-radius: 11px;
+  border: 0.5px solid rgba(224, 224, 224, 0.88);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 25px 34px;
+  background-color: #fff;
+
+}
+
+.tenant__pill__menu {
+  width: 100%;
+  padding-right: 115px;
+}
+
+.nav-Link {
+  color: #000;
+  font-family: Inter;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 18.434px */
+  letter-spacing: -0.285px;
+}
+
+.nav-Link:hover {
+  color: #6155DF;
+}
+
+.nav-pills .nav-Link.active,
+.nav-pills .show>.nav-Link {
+  color: #6155DF;
+  font-family: Inter;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 97.023%;
+  /* 18.434px */
+  letter-spacing: -0.285px;
+  background-color: transparent;
+}
+
+.tenant__card {
+  width: 100%;
+  border-radius: 14.933px;
+  border: 0.933px solid #E0E0E0;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  height: 185px;
+}
+
+.tenant__card__img img {
+  width: 269px;
+  height: 184px;
+  flex-shrink: 0;
+  border-radius: 14.933px 0px 0px 14.933px;
+}
+
+.tenant__card__img button:nth-child(2) {
+  top: 10px;
+  left: 10px;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132.523%;
+  /* 18.553px */
+  letter-spacing: -0.21px;
+  width: 48px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #6155DF;
+  border: none;
+}
+
+.tenant__card__img button:nth-child(3) {
+  top: 10px;
+  left: 75px;
+  color: #6155DF;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132.523%;
+  /* 18.553px */
+  width: 48px;
+  height: 30px;
+  border-radius: 4px;
+  background: #FFF;
+  border: none;
+  flex-shrink: 0;
+  letter-spacing: -0.21px;
+}
+
+.tenant__card__head h3 {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 132.523%;
+  /* 21.204px */
+  letter-spacing: -0.4px;
+}
+
+.tenant__card__head h4 {
+  color: #696969;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.523%;
+  /* 13.252px */
+  letter-spacing: -0.15px;
+}
+
+.tenant__card__prize h3 {
+  color: #5E5E5E;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.523%;
+  /* 22.529px */
+  letter-spacing: -0.425px;
+}
+
+.tenant__card__num h3 {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.523%;
+  /* 21.204px */
+  letter-spacing: -0.4px;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.tenant__card__num h4 {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132.523%;
+  /* 19.878px */
+  letter-spacing: -0.375px;
+
+}
+
+.tenant__card__photos img {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+
+.tenant__card__photos a {
+  color: #555;
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.523%;
+  /* 14.577px */
+  letter-spacing: -0.275px;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.tenant__card__btn__1 button {
+  color: #6155DF;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.523%;
+  /* 17.228px */
+  letter-spacing: -0.325px;
+  width: 117px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 4.7px;
+  border: 0.5px solid #6155DF;
+  background: #FFF;
+  box-shadow: 0px 1.5px 1.5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.tenant__card__btn__2 button {
+  color: #6155DF;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132.523%;
+  /* 17.228px */
+  letter-spacing: -0.325px;
+  width: 75px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 4.7px;
+  border: 0.5px solid #6155DF;
+  background: #FFF;
+  box-shadow: 0px 1.5px 1.5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.tenant__card__time p{
+  color: #000;
+font-family: Inter;
+font-size: 8px;
+font-style: normal;
+font-weight: 300;
+line-height: 132.523%; /* 10.602px */
+letter-spacing: -0.12px;
+top: 0px;
+right: 50px;
 }

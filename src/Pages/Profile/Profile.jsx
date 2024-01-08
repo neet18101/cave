@@ -1,19 +1,21 @@
 import React from "react";
 import { useState } from "react";
+import './Tenant'
 
 import "./Profile.css";
 import SubNavbar from "../../Components/Layout/Header/SubNavbar";
 import Footer from "../../Components/Footer";
+import Tenant from "./Tenant";
 
 function Profile() {
   const [nameChange, setNameChange] = useState("Navneet Yadav");
-  const handleClickName = () => {};
+  const handleClickName = () => { };
   return (
     <>
       <SubNavbar />
       <section className="container account">
         <h3 className="account__title">Manage my account</h3>
-        <div className="booking d-flex account__detail ">
+        <div className="booking d-flex account__detail mb-5">
           <ul
             className="nav nav-pills mb-3 d-flex flex-column detail_menu_item"
             id="pills-tab"
@@ -44,7 +46,7 @@ function Profile() {
                 aria-controls="pills-profile"
                 aria-selected="false"
               >
-                Tenant space
+                <a href="#">Tenant space</a>
               </button>
             </li>
             <li className="nav-item profile__nav__item" role="presentation">
@@ -167,9 +169,7 @@ function Profile() {
               role="tabpanel"
               aria-labelledby="pills-profile-tab"
             >
-              <h3>Tenant Space</h3>
-              <div className="user__id d-flex justify-content-between align-items-center"></div>
-              <div className="personal__info"></div>
+              {/* <Tenant/> */}
             </div>
             <div
               className="tab-pane fade"
