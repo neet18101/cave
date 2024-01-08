@@ -4,7 +4,7 @@
       rgba(5, 13, 187, 0.16) 100%);
   height: 100vh;
   position: relative;
-  width: 598px !important;
+  /* width: 598px ; */
 }
 
 .signupParentDiv {
@@ -120,7 +120,7 @@
 
 .emailInput {
   border: none;
-  background:none;
+  background: none;
   top: 40px;
   left: 10px;
   position: relative;
@@ -191,9 +191,10 @@
 
 .email__checkbox {
   text-align: right;
-  width: 83%;
+  width: 81%;
   margin-left: 57px;
-  padding: 0px 65px;
+  padding: 0px 62px;
+  padding-left: 73px;
   margin-top: 30px;
   color: #4F4E4E;
   font-family: Inter;
@@ -201,9 +202,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 97.023%;
-  /* 16.649px */
   letter-spacing: 0.172px;
-
 }
 
 .email__checkbox input {
@@ -212,10 +211,11 @@
   flex-shrink: 0;
   border-radius: 3.654px;
   border: 1.37px solid #515151;
+  margin-left: 0px !important;
 }
 
-.email__checkbox label{
-  padding:0 ;
+.email__checkbox label {
+  padding: 0;
   padding-right: 30px;
 }
 
@@ -236,15 +236,19 @@
   font-size: 15.73px;
   font-style: normal;
   font-weight: 500;
+  margin-left: 100px;
   line-height: 97.023%;
   /* 18.172px */
   letter-spacing: -0.749px;
 }
 
-.signup__lower{
+.signup__lower {
   padding: 10px 0px;
 }
 
+.email__checkbox input{
+  margin-left: 0;
+}
 @media screen and (max-width:322px) {
   .signup__head {
     text-align: center;
@@ -328,10 +332,37 @@
 
   .createAccountButton {
     padding: 10px 90px;
+  }
+
+  .already__acc {
+    padding-left: 0px;
+    text-align: center;
+  }
 }
 
-.already__acc {
-  padding-left: 0px;
-  text-align: center;
+@media screen and (min-width:1022px)and (max-width:1199px) {
+  .form__check {
+    padding: 0;
+  }
+
+  .email__checkbox {
+    position: relative;
+    width: 73%;
+    margin-left: 91px;
+    padding: 0px 0px;
+    padding-left: 1px;
+  }
+
+  .email__checkbox input{
+    position: absolute;
+    left: 0px;
+  }
+
+  .field {
+    border-bottom: 1px solid #909090;
+    width: 63%;
+    text-align: left;
+    margin: 0 auto;
 }
 }
+

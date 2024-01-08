@@ -118,3 +118,15 @@
     padding: 8px 7px;
   }
 }
+
+@media screen and (min-width:1022px) and (max-width:1200px) {
+  .loginForm {
+    margin-top: 70px;
+    margin-left: 0px;
+    width: 488px;
+  }
+
+  .logn__withbutton {
+    padding: 8px 106px;
+  }
+}

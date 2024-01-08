@@ -127,26 +127,25 @@ function Locality({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
           <div className="col-lg-12">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109744.05905969579!2d76.68831226897285!3d30.732401982900683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0be66ec96b%3A0xa5ff67f9527319fe!2sChandigarh!5e0!3m2!1sen!2sin!4v1702486365823!5m2!1sen!2sin"
-              width={987}
               height={398}
-              style={{ border: 0 }}
+              style={{ border: 0 , width:"100%" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>
-        <div className="listing__foot__btns d-flex">
+        <div className="listing__foot__btns d-flex flex-column align-items-center flex-sm-row">
           {activeTab !== 1 && (
             <button
-              className="listing__foot__btn-1"
+              className="listing__foot__btn-1 mb-2"
               onClick={() => handleTabClick(activeTab - 1)}
             >
               Back
             </button>
           )}
           <button
-            className="listing__foot__btn-2"
+            className="listing__foot__btn-2 mb-2"
             onClick={() => {
               saveNext();
               handleSubmit();

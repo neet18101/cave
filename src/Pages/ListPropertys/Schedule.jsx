@@ -39,8 +39,8 @@ function Schedule({
         <label className="form-label form__label__listing ">
           Availability{" "}
         </label>
-        <div className="d-flex">
-          <div className="d-flex avail__check">
+        <div className="d-flex ">
+          <div className="d-flex avail__check flex-wrap align-items-center justify-content-center ">
             <input
               type="radio"
               id="everyday"
@@ -49,7 +49,7 @@ function Schedule({
               onChange={() => handleInputChange("availability", "mon-sun")}
               hidden
             />
-            <label className="avail-box" htmlFor="everyday">
+            <label className="avail-box mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0" htmlFor="everyday">
               <img
                 src="/image/routine.png"
                 alt=""
@@ -70,7 +70,7 @@ function Schedule({
               onChange={() => handleInputChange("availability", "mon-fri")}
               hidden
             />
-            <label className="avail-box" htmlFor="weekday">
+            <label className="avail-box mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0" htmlFor="weekday">
               <img
                 src="/image/weekday.png"
                 alt=""
@@ -91,7 +91,7 @@ function Schedule({
               onChange={() => handleInputChange("availability", "sat-sun")}
               hidden
             />
-            <label className="avail-box" htmlFor="weekend">
+            <label className="avail-box mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0" htmlFor="weekend">
               <img
                 src="/image/weekend.png"
                 alt=""
@@ -285,17 +285,17 @@ function Schedule({
             </label>
           </div>
         </div>
-        <div className="listing__foot__btns d-flex">
+        <div className="listing__foot__btns d-flex flex-column align-items-center flex-sm-row">
           {activeTab !== 1 && (
             <button
-              className="listing__foot__btn-1"
+              className="listing__foot__btn-1 mb-2"
               onClick={() => handleTabClick(activeTab - 1)}
             >
               Back
             </button>
           )}
           {isLastTab ? (
-            <button className="listing__foot__btn-2" onClick={handleSubmit}>
+            <button className="listing__foot__btn-2 mb-2" onClick={handleSubmit}>
               Submit
             </button>
           ) : (

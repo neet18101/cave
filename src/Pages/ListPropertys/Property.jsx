@@ -42,7 +42,7 @@ function Property({ saveNext, activeTab, handleTabClick,  isLastTab, onChildData
           </label>
           <input
             type="text"
-            className="form-control"
+            className="form-control form__control"
             id="pg-name"
             placeholder="Enter Your Name"
             style={{ backgroundColor: "#f9fafc" }}

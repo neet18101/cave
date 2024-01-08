@@ -95,7 +95,7 @@ function Owner() {
   return (
     <>
       <SubNavbar />
-      <section id="owner-sec">
+      <section id="owner-sec" style={{backgroundColor:"#eae9ef"}}>
         <h2 style={{ color: "#111C55" }}>
           List Property with{" "}
           <span style={{ color: "#5E17EB", fontSize: "2rem" }}>
@@ -105,7 +105,7 @@ function Owner() {
         </h2>
         <div className="container-fluid">
           <div className="row owner__section">
-            <div className="col-lg-3 px-0">
+            <div className="col-lg-4 px-0">
               <div className="owner__left d-flex flex-column align-items-end ">
                 <div className="owner__left__box1">
                   <h1>Why post through us?</h1>
@@ -140,7 +140,7 @@ function Owner() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-9 px-0">
+            <div className="col-lg-8 px-0">
               <div className="owner__right">
                 <h1>Let’s start with us!</h1>
                 <hr className="divide" />

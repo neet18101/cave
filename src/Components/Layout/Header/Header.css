@@ -15,7 +15,7 @@
   max-width: 36rem;
 }
 
-.discover_a span{
+.discover_a span {
   font-size: 3.5rem;
   font-family: "Inter";
   font-weight: 900;
@@ -162,7 +162,7 @@ span {
 }
 
 .vertical__1 {
-  border-right: 3px solid white;
+  margin-right: 10px;
 }
 
 .counter-item h1 {
@@ -193,7 +193,7 @@ span {
   }
 }
 
-.nav__padding{
+.nav__padding {
   padding: 0;
 }
 
@@ -206,6 +206,12 @@ span {
   flex-shrink: 0;
 }
 
+.count__line {
+  width: 2px;
+  background-color: #fff;
+  height: 60px;
+}
+
 @media screen and (max-width : 322px) {
   .discover_a {
     font-size: 2.25rem;
@@ -214,7 +220,8 @@ span {
     font-weight: 700;
 
   }
-  .discover_a span{
+
+  .discover_a span {
     font-size: 2.45rem;
     text-align: center;
     max-width: 36rem;
@@ -287,8 +294,16 @@ span {
     border-right: 3px solid white;
     padding-right: 20px;
   }
-  
+
   .vertical__1 {
     border-right: none;
+  }
+}
+
+@media screen and (min-width:1020px) and (max-width:1100px) {
+  .counter-row {
+    margin-top: 50px;
+    width: 86%;
+    display: flex;
   }
 }

@@ -4,17 +4,17 @@ import "./Specification.css";
 const Specification = () => {
     return (
         <>
-            <div className="header__about">
+            <div className="header__about w-100">
                 <div className="d-flex header__about__head  align-items-start  justify-content-start ">
-                    <div className=" header__about__main">
+                    <div className=" header__about__main ">
                         <h1 className="text-left  ">Rentals made efficient and
                             smooth with <span className="text-orangeY">Bachelors Cave</span></h1>
                         <p className="text-sm  text-left">Book accomodation
                             online with certified lessors. Enjoy personalised support all the way through.</p>
                     </div>
-                    <img src="/image/house-hand.be575dd17024821adecc.png" className="img-fluid" />
+                    <img src="/image/house-hand.be575dd17024821adecc.png" className="img-fluid " />
                 </div>
-                <div className="header__about__submain">
+                <div className="header__about__submain ">
                     <div className="d-flex header__about__submain__top justify-content-between row">
                         <div className="d-flex flex-column justify-content-center align-items-start submain__box col-4 ">
                             <div className="d-flex flex-column align-items-center ">
@@ -26,7 +26,7 @@ const Specification = () => {
                                     care of selecting tailor made offers for you.</p>
                             </div>
                         </div>
-                        <div className="d-flex flex-column  justify-content-center align-items-start submain__box col-4 ">
+                        <div className="d-flex flex-column   align-items-start submain__box col-4 ">
                             <div className="d-flex flex-column align-items-center "><img src="/image/target.f9f44248721f0601f25b.png" className="img-fluid" />
                             </div>
                             <div className="submain__box__head">

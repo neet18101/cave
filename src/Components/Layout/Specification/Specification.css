@@ -38,13 +38,16 @@
 
 .header__about__submain {
     position: absolute;
-    top: 460px;
+    top: 530px;
     margin-top: -5rem;
-    margin: 0 4rem;
+    /* margin: 0 4rem; */
+    left: 4rem;
+    right: 4rem;
     padding: 2rem;
     border-radius: .5rem;
     background-color: #ffffff;
     box-shadow:0px 0px 18px #d7d7d7;
+    padding-bottom: 150px;
 }
 
 .submain__box img {
@@ -93,7 +96,12 @@ margin-bottom: 15px;
     margin-bottom: 15px;
 }
 
+.header__about__head img{
+    width: 33.3333%;
+}
+
 .header__about__submain button{
+    position:absolute;
     padding: 0.75rem 1.5rem;
     width: 155px;
     height: 48px;
@@ -103,7 +111,9 @@ margin-bottom: 15px;
     color: white;
     font-weight: 600;
     border-radius: 7px;
-    margin: 0px 490px;
+    /* margin: 0px 490px; */
+    left: 42%;
+    bottom: 40px;
     margin-top: 50px;
     transition: all .2s;
 }
@@ -230,4 +240,53 @@ margin-bottom: 15px;
             /* margin-top: 50px; */
             position: relative;
         }
+}
+
+@media  screen and (min-width:1020px) and (max-width:1100px){
+    .about__submain__tech {
+        padding: 0 84px;
+        margin-top: 50px;
+    }
+
+    .header__about__main h1 {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        width: 369px;
+        height: 80px;
+    }
+
+    .header__about__main p {
+        width: 390px;
+        font-size: .95rem;
+        line-height: 1rem;
+        margin-right: 100px;
+        margin-top: 0;
+    }
+
+    .header__about__main h1 span {
+        color: #ff4f00;
+        font-size: 1.65rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+    }
+
+    .header__about__submain {
+        top: 420px;
+    }
+
+    .header__about {
+        margin-bottom: 100px;
+    }
+}
+
+@media  screen and (min-width:1200px) and (max-width:1320px){
+    .header__about__submain {
+        top: 479px;
+    }
+
+    .about__submain__tech {
+        padding: 0 200px;
+        margin-top: 50px;
+    }
 }

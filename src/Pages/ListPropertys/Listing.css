@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 
-*{
+* {
   scroll-behavior: smooth;
 }
+
 .dropdown-menu {
   position: absolute;
   top: 20px;
@@ -11,7 +12,7 @@
   /* height: 300px; */
   flex-shrink: 0;
   max-height: 300px;
-  overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .listing__body {
@@ -163,7 +164,7 @@
   line-height: normal;
 }
 
-.form-control {
+.form__control {
   width: 50%;
   height: 35px;
   flex-shrink: 0;
@@ -248,17 +249,17 @@
 }
 
 .listing__foot__btns {
-  padding: 0px 245px !important;
+  padding: 0px 245px ;
   margin: 20px 200px;
 }
 
 .form__label__listing {
   color: #000;
-font-family: Inter;
-font-size: 13px;
-font-style: normal;
-font-weight: 500 !important;
-line-height: normal;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500 !important;
+  line-height: normal;
 }
 
 .listing__email {
@@ -417,7 +418,7 @@ line-height: normal;
 }
 
 
-.amenities__btn label{
+.amenities__btn label {
   width: 48px;
   height: 32px;
   padding: 6px 12px;
@@ -426,42 +427,42 @@ line-height: normal;
   cursor: pointer;
 }
 
-.amenities__btn0 input[type="radio"]:checked + .gym__no0{
+.amenities__btn0 input[type="radio"]:checked+.gym__no0 {
   border: 1px solid orangered;
   background-color: rgba(255, 150, 112, 0.145);
 }
 
-.amenities__btn0 input[type="radio"]:checked + .gym__yes0{
+.amenities__btn0 input[type="radio"]:checked+.gym__yes0 {
   border: 1px solid rgb(1, 192, 1);
   background-color: rgba(1, 192, 1, 0.212);
 }
 
-.amenities__btn1 input[type="radio"]:checked + .gym__no1{
+.amenities__btn1 input[type="radio"]:checked+.gym__no1 {
   border: 1px solid orangered;
   background-color: rgba(255, 150, 112, 0.145);
 }
 
-.amenities__btn1 input[type="radio"]:checked + .gym__yes1{
+.amenities__btn1 input[type="radio"]:checked+.gym__yes1 {
   border: 1px solid rgb(1, 192, 1);
   background-color: rgba(1, 192, 1, 0.212);
 }
 
-.amenities__btn2 input[type="radio"]:checked + .gym__no2{
+.amenities__btn2 input[type="radio"]:checked+.gym__no2 {
   border: 1px solid orangered;
   background-color: rgba(255, 150, 112, 0.145);
 }
 
-.amenities__btn2 input[type="radio"]:checked + .gym__yes2{
+.amenities__btn2 input[type="radio"]:checked+.gym__yes2 {
   border: 1px solid rgb(1, 192, 1);
   background-color: rgba(1, 192, 1, 0.212);
 }
 
-.amenities__btn3 input[type="radio"]:checked + .gym__no3{
+.amenities__btn3 input[type="radio"]:checked+.gym__no3 {
   border: 1px solid orangered;
   background-color: rgba(255, 150, 112, 0.145);
 }
 
-.amenities__btn3 input[type="radio"]:checked + .gym__yes3{
+.amenities__btn3 input[type="radio"]:checked+.gym__yes3 {
   border: 1px solid rgb(1, 192, 1);
   background-color: rgba(1, 192, 1, 0.212);
 }
@@ -526,7 +527,7 @@ line-height: normal;
   margin: 0;
 }
 
-.avail-box{
+.avail-box {
   /* width: 100px !important; */
   padding: .75rem 3rem;
   align-items: center;
@@ -534,19 +535,19 @@ line-height: normal;
   display: flex;
   flex-direction: column;
   border: 1px solid grey;
-  border-radius: .5rem ;
+  border-radius: .5rem;
   text-align: center;
   cursor: pointer;
   transition: all .3s;
   margin-right: 10px;
 }
 
-.avail-box:hover{
+.avail-box:hover {
   border: 1px solid cyan !important;
   background-color: rgba(102, 251, 251, 0.181) !important;
 }
 
-.avail-box h1{
+.avail-box h1 {
   color: #000 !important;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -554,13 +555,56 @@ line-height: normal;
   color: rgb(20 33 61);
 }
 
-.avail-box p{
+.avail-box p {
   color: #000 !important;
   font-size: .875rem;
-    line-height: 1.25rem;
+  line-height: 1.25rem;
 }
 
-.avail__check input[type="radio"]:checked + label{
-  background-color: rgba(102, 251, 251, 0.181) ;
+.avail__check input[type="radio"]:checked+label {
+  background-color: rgba(102, 251, 251, 0.181);
   border: 1px solid rgb(0, 152, 152);
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .listing__foot__btns {
+    padding: 0px !important;
+    margin: 20px 200px;
+  }
+
+  .form__control {
+    width: 100%;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 570px) {
+  .form__control {
+    width: 100%;
+}
+.listing__foot__btns {
+  padding: 0px !important;
+  margin: 20px 200px;
+}
+
+.listing__pg h3 {
+  font-size: 19px;
+}
+textarea{
+  height:200px ;
+}
+
+.listing__body {
+  background-size: auto;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

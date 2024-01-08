@@ -221,7 +221,7 @@ const Header = () => {
                       href="#home"
                     >
                       <form action="" className="">
-                        <img src="/image/Vector.png" alt="" />
+                        <img src="/image/Vector-lens.png" alt="" />
                       </form>
                     </a>
                   </li>
@@ -394,7 +394,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="row counter-row">
-                <div className="col-md-6 col-6 vertical">
+                <div className="col-md-5 col-5 vertical">
                   <div className="counter-item vertical__1  d-flex ">
                     <h1>{count1}+</h1>
                     <h4>
@@ -402,8 +402,10 @@ const Header = () => {
                     </h4>
                   </div>
                 </div>
-
-                <div className="col-md-6 col-6">
+                    <div className="col-1 pe-0 ps-4 ">
+                      <div className="count__line"></div>
+                    </div>
+                <div className="col-md-5 col-5">
                   <div className="counter-item d-flex">
                     <h1>{count2}+</h1>
                     <h4>

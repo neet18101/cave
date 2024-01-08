@@ -111,16 +111,16 @@ function Gallery({ saveNext, activeTab, handleTabClick }) {
             />
           </div>
         </div>
-        <div className="listing__foot__btns d-flex">
+        <div className="listing__foot__btns d-flex flex-column align-items-center flex-sm-row">
           {activeTab !== 1 && (
             <button
-              className="listing__foot__btn-1"
+              className="listing__foot__btn-1 mb-2"
               onClick={() => handleTabClick(activeTab - 1)}
             >
               Back
             </button>
           )}
-          <button className="listing__foot__btn-2"  onClick={() => {
+          <button className="listing__foot__btn-2 mb-2"  onClick={() => {
                 saveNext();
                 handleSubmit();
               }}>

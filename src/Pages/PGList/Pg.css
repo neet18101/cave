@@ -150,7 +150,9 @@
   line-height: normal;
 }
 
-.form-control {
+
+
+.form__control {
   width: 50%;
   height: 35px;
   flex-shrink: 0;
@@ -235,7 +237,7 @@
 }
 
 .listing__foot__btns {
-  padding: 0px 245px !important;
+  padding: 0px 245px ;
   margin: 20px 200px;
 }
 
@@ -668,10 +670,23 @@ line-height: normal;
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 570px) {
   .listing__foot__btns {
     margin: 20px 0px;
     padding: 0px 0px ;
-
   }
+
+  .form__control {
+    width: 100%;
+}
+
+.listing__body {
+  background-size: auto;
+}
+
+
+.listing__pg h3 {
+  font-size: 19px;
+}
+
 }

@@ -23,7 +23,7 @@ function PGroom() {
                             </label>
                             <input
                                 type="text"
-                                className="form-control"
+                                className="form-control form-control "
                                 id="pg-name"
                                 placeholder="Enter Your PG Name"
                             />

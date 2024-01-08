@@ -56,7 +56,7 @@ function LoginPage() {
 
   return (
     <>
-     <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <section className="loginSection">
         <div className="container">
           <div className="row">
@@ -94,7 +94,7 @@ function LoginPage() {
                     <div className="text-left loginWidth d-flex flex-column justify-content-center align-item-center">
                       <img
                         src="/image/email.png"
-                        // style={{ width: "25px", paddingBottom: "5px" }}
+                      // style={{ width: "25px", paddingBottom: "5px" }}
                       />
                       <input
                         type="text"
@@ -113,7 +113,7 @@ function LoginPage() {
                       <div className=" text-left loginWidth">
                         <img
                           src="/image/password.png"
-                          // style={{ width: "25px", paddingBottom: "5px" }}
+                        // style={{ width: "25px", paddingBottom: "5px" }}
                         />
                         <input
                           type={visible ? "text" : "password"}

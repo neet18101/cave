@@ -174,7 +174,7 @@ const SubNavbar = () => {
                       href="#home"
                     >
                       <form action="" className="">
-                        <img src="/image/Vector.png" alt="" />
+                        <img src="/image/Vector-lens.png" alt="" />
                       </form>
                     </a>
                   </li>
