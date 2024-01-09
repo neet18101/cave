@@ -10,6 +10,8 @@ import Profile from "./Pages/Profile/Profile";
 import Filter from "./Pages/Filter/Filter";
 import Tenant from "./Pages/Profile/Tenant";
 import Owner from "./Pages/Owner/Owner";
+import OwnerDashboard from "./Pages/OwnerDashboard/OwnerDashboard";
+
 import PGlist from "./Pages/PGList/PGlist ";
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/owner" element={<Owner />} />
+        <Route path="/owner-dashboard" element={<OwnerDashboard />} />
         <Route path="/pglist" element={<PGlist />} />
 
         <Route path="/list-property" element={<Listing />} />
