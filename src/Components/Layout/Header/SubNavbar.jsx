@@ -43,6 +43,7 @@ const SubNavbar = () => {
           style={{
             borderBottom: " 1px solid #4d4d4d94",
             filter: "drop-shadow(1px 1px 1px #bcbcbc)",
+            zIndex:"10",
           }}
         >
           <div className="container-fluid nav__padding">
