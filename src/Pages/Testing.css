@@ -261,3 +261,9 @@ label {
   border: none;
   outline: none;
 }
+.dropdown-menu.show{
+  overflow-y: hidden !important;
+}
+.user{
+  padding: 0px 10px;
+}

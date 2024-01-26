@@ -10,6 +10,7 @@ import Profile from "./Pages/Profile/Profile";
 import Filter from "./Pages/Filter/Filter";
 import Owner from "./Pages/Owner/Owner";
 import PGlist from "./Pages/PGList/PGlist ";
+import OwnerDasboard from "./Pages/Ownerdasboard/OwnerDasboard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/owner" element={<Owner />} />
+        <Route path="/dashboard" element={<OwnerDasboard />} />
         <Route path="/pglist" element={<PGlist />} />
 
         <Route path="/list-property/:id" element={<Listing />} />

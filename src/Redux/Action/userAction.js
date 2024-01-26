@@ -27,13 +27,14 @@ export const userAction = (user) => async (dispatch) => {
         duration: 3000, // Toast will be shown for 3 seconds
       });
     } else if (data.success === true) {
+      console.log(data.type);
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
-      if (data.data.type === 2) {
-        localStorage.setItem("userInfo", JSON.stringify(data.data));
+      if (data.type === 2) {
+        localStorage.setItem("userInfo", JSON.stringify(data.token));
         const redirectPath =
-          data.data.propertyType === "pg"
-            ? `/pglist/${data.data._id}`
-            : `/list-property/${data.data.id}`;
+          data.propertyType === "pg"
+            ? `/pglist/${data._id}`
+            : `/list-property/${data.id}`;
         setTimeout(() => {
           window.location.href = redirectPath;
         }, 2000);

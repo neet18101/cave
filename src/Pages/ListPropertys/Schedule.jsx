@@ -170,9 +170,9 @@ function Schedule({
                   "08:00 PM",
                   "08:30 PM",
                   "09:00 PM",
-                ].map((data) => {
+                ].map((data , index) => {
                   return (
-                    <li>
+                    <li key={index}>
                       <a
                         className="dropdown-item dropdown__item__listing"
                         onClick={() => handleInputChange("starttime", data)}

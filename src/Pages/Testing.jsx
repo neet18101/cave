@@ -6,6 +6,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { BorderColor } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
+import SubNavbar from "../Components/Layout/Header/SubNavbar";
 // import FormControl from '@mui/material/FormControl';
 
 const Testing = () => {
@@ -49,102 +50,34 @@ const Testing = () => {
     };
     updateCounter();
   }, []);
+
+  // navbar sticky
+  const [active, setActive] = useState(false);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  });
+
+  const userData = JSON.parse(localStorage.getItem("userInfo"));
+  const [sortedData, setSortedData] = useState("");
+  // console.log(userData && userData.token,VITE_SECRET_KEY);
+  const decode = (token, secertKey) => {
+    setSortedData(decryptData(token, secertKey));
+  };
+  useEffect(() => {
+    decode(userData && userData.token, import.meta.env.VITE_SECRET_KEY);
+  }, []);
+
+  const logOut = () => {
+    localStorage.removeItem("userInfo");
+    window.location.href = "/";
+  };
   return (
     <>
-      <header style={{ background: "#000" }}>
-        <nav className="navbar navbar-expand-lg navbar-sticky">
-          <div className="container">
-            <a className="navbar-brand logoName" href="#">
-              <img
-                decoding="async"
-                src="/icons/vector.svg"
-                className="img-fluid w-25 navbar-brand-regular px-3"
-              />
-              <img
-                decoding="async"
-                src="/icons/brand.svg"
-                className="img-fluid navbar-brand-sticky"
-              />
-              BachelorsCave
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarText"
-              aria-controls="navbarText"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="ti-align-justify navbar-toggler-icon" />
-            </button>
-            <div className="collapse navbar-collapse" id="navbarText">
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a
-                    className="nav-link scroll active"
-                    aria-current="page"
-                    href="#home"
-                  >
-                    <form action="" className="">
-                      <img src="/icons/vector1.svg" alt="" />
-                    </form>
-                  </a>
-                </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    style={{
-                      color: "#fff",
-                      textTransform: "none",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    I’m an owner <KeyboardArrowDownIcon />
-                  </a>
-                  <div
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <a className="dropdown-item" href="#">
-                      List Property
-                    </a>
-                    <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="#">
-                      Login
-                    </a>
-                    <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="#">
-                      Signup
-                    </a>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link scroll" href="#app-screenshots">
-                    <Button
-                      variant="outlined"
-                      style={{
-                        color: "#fff",
-                        borderColor: "#fff",
-                        padding: "0px 15px",
-                        textTransform: "capitalize",
-                      }}
-                    >
-                      Register
-                    </Button>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
+     <SubNavbar/>
       <section id="home">
         <div className="container">
           <div className="row align-items-center">

@@ -133,11 +133,11 @@ const Listing = () => {
     setParentData(updatedParentData);
   };
   const handleScheduleChange = (newdata) => {
-    axios.post(
-      `${import.meta.env.VITE_API_URL}/api/v1/schedule`,
-      newdata,
-      config
-    );
+    axios
+      .post(`${import.meta.env.VITE_API_URL}/api/v1/schedule`, newdata, config)
+      .then((res) => {
+        res.data.status === 200 && window.location("/dashboard");
+      });
 
     localStorage.setItem("schedule", JSON.stringify(newdata));
     const updatedParentData = [...parentData, newdata];

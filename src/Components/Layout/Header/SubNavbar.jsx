@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import { decryptData } from "../../../_helper/cryptoUtils";
 
 const SubNavbar = () => {
@@ -17,16 +18,18 @@ const SubNavbar = () => {
   const [sortedData, setSortedData] = useState("");
   // console.log(userData && userData.token,VITE_SECRET_KEY);
   const decode = (token, secertKey) => {
+    console.log(token);
     setSortedData(decryptData(token, secertKey));
   };
   useEffect(() => {
-    decode(userData && userData.token, import.meta.env.VITE_SECRET_KEY);
+    decode(userData && userData, import.meta.env.VITE_SECRET_KEY);
   }, []);
 
   const logOut = () => {
     localStorage.removeItem("userInfo");
     window.location.href = "/";
   };
+  console.log(sortedData);
 
   return (
     <>
@@ -43,7 +46,7 @@ const SubNavbar = () => {
           }}
         >
           <div className="container-fluid nav__padding">
-            <a className="navbar-brand logoName" href="#">
+            <a className="navbar-brand logoName" href="/">
               {active === true ? (
                 <>
                   {/* <img
@@ -86,85 +89,177 @@ const SubNavbar = () => {
             >
               <span className="ti-align-justify navbar-toggler-icon" />
             </button>
-            {}
-            {sortedData && sortedData != null ? (
-              <>
-                <div className="nav__right d-flex justify-content-between align-items-center">
-                  <div className="user d-flex justify-content-start align-items-center">
-                    <a href="#">
-                      <img
-                        src="image/account-circle.png"
-                        className="user__icon"
-                        alt="user account"
-                      />
-                    </a>
-                    <div className="dropdown">
-                      <button
-                        id="user__name"
-                        className="d-flex justify-content-between align-items-center"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        {sortedData?.name}{" "}
-                        <i className="fa-solid fa-chevron-down" />
-                      </button>
-                      <ul className="dropdown-menu mt-2">
-                        <li>
-                          <Link to={"/profile"} className="dropdown__item">
-                            My Profile
-                          </Link>
-                        </li>
-                        <hr />
-                        <li>
-                          <a className="dropdown__item" href="#">
-                            Manage Subscription
-                          </a>
-                        </li>
-                        <hr />
-                        <li>
-                          <a className="dropdown__item" href="#">
-                            Tenant Space
-                          </a>
-                        </li>
-                        <hr />
-                        <li>
-                          <a className="dropdown__item" href="#">
-                            Shortlist
-                          </a>
-                        </li>
-                        <hr />
-                        <li>
-                          <a className="dropdown__item" href="#">
-                            Seen Properties
-                          </a>
-                        </li>
-                        <hr />
-                        <li>
-                          <a className="dropdown__item" href="#">
-                            Owners you contacted
-                          </a>
-                        </li>
-                        <hr />
-                        <li>
-                          <a
-                            className="dropdown__item log__out"
-                            href="#"
-                            onClick={logOut}
-                          >
-                            Sign out
-                          </a>
-                        </li>
-                      </ul>
+
+            {sortedData && sortedData !== null ? (
+              sortedData?.userType === 2 ? (
+                // Admin view
+                <>
+                  <div className="nav__right d-flex justify-content-between align-items-center">
+                    <div className="user d-flex justify-content-start align-items-center">
+                      <a href="#">
+                        <img
+                          src="/image/account-circle.png"
+                          className="user__icon"
+                          alt="user account"
+                        />
+                      </a>
+                      <div className="dropdown">
+                        <button
+                          id="user__name"
+                          className="d-flex justify-content-between align-items-center"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                          style={{ textTransform: "capitalize" }}
+                        >
+                          {sortedData?.name}{" "}
+                          <i className="fa-solid fa-chevron-down" />
+                        </button>
+                        <ul
+                          className="dropdown-menu mt-2"
+                          style={{ scroll: "hidden" }}
+                        >
+                          <li>
+                            <Link to={"/dashboard"} className="dropdown__item">
+                              Dashboard
+                            </Link>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Manage Subscription
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Tenant Space
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Shortlist
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Seen Properties
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Owners you contacted
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a
+                              className="dropdown__item log__out"
+                              href="#"
+                              onClick={logOut}
+                            >
+                              Sign out
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
+                    {/* <a href="#" className="up__plan">
+                      Upgrade Plan
+                    </a> */}
+                    <button
+                      className="nav__register"
+                      style={{ fontWeight: 200 }}
+                    >
+                      List Property
+                    </button>
+                    {/* <i>{NotificationsIcon}</i> */}
                   </div>
-                  <a href="#" className="up__plan">
-                    Upgrade Plan
-                  </a>
-                  <button className="nav__register">Register</button>
-                </div>
-              </>
+                </>
+              ) : (
+                // User view
+                <>
+                  <div className="nav__right d-flex justify-content-between align-items-center">
+                    <div className="user d-flex justify-content-start align-items-center">
+                      <a href="#">
+                        <img
+                          src="image/account-circle.png"
+                          className="user__icon"
+                          alt="user account"
+                        />
+                      </a>
+                      <div className="dropdown">
+                        <button
+                          id="user__name"
+                          className="d-flex justify-content-between align-items-center"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          {sortedData?.name}{" "}
+                          <i className="fa-solid fa-chevron-down" />
+                        </button>
+                        <ul className="dropdown-menu mt-2">
+                          <li>
+                            <Link to={"/profile"} className="dropdown__item">
+                              My Profile
+                            </Link>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Manage Subscription
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Tenant Space
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Shortlist
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Seen Properties
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a className="dropdown__item" href="#">
+                              Owners you contacted
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a
+                              className="dropdown__item log__out"
+                              href="#"
+                              onClick={logOut}
+                            >
+                              Sign out
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a href="#" className="up__plan">
+                      Upgrade Plan
+                    </a>
+                    <button className="nav__register">Register</button>
+                  </div>
+                </>
+              )
             ) : (
+              // Login view
               <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li className="nav-item">
