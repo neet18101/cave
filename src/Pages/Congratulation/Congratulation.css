@@ -1,0 +1,176 @@
+.congratulation {
+    box-shadow: 0px 1px 2px 2px #00000040;
+    height: fit-content;
+    width: 100%;
+    margin: 60px 0;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.congrats__head img {
+    height: 25px;
+    width: 26px;
+}
+
+.congrats__head h3 {
+    font-family: Inter;
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #111C55;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.congrats__para p {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.congrats__btn button:nth-child(1) {
+    width: fit-content;
+    padding: 0px 12px;
+    height: 32px;
+    border-radius: 7px;
+    border: 1px solid #6155DF;
+    color: #6155DF;
+    background-color: #fff;
+}
+
+.congrats__btn button:nth-child(2) {
+    width: 154px;
+    height: 32px;
+    border-radius: 7px;
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: #6155DF;
+    color: #fff;
+    border: none;
+    box-shadow: 0px 1px 1px 0px #00000040;
+    margin-left: 10px;
+}
+
+body {
+    background-color: #fff;
+}
+
+.congrats__premium {
+    padding: 15px;
+    box-shadow: 0px 1px 1px 0px #00000040;
+    background-color: #ebebff;
+}
+
+.congrats__prem__up img {
+    width: 40px;
+    height: 40px;
+}
+
+.prem__up__head h3 {
+    font-family: Inter;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+.prem__up__head p {
+    width: 362px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.prem__up__head {
+    margin-left: 20px;
+}
+
+.prem__up__btn {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+    width: 104px;
+    height: 30px;
+    background: #6155DF;
+    border-radius: 6px;
+    border: 1px solid #6155DF;
+    margin-left: 30px;
+}
+
+.premium__btm h5 {
+    margin-left: 15px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+}
+
+.congrats__warn {
+    height: 147px;
+    border-radius: 4px;
+    border: 0.4px;
+    background: #fff4e3;
+    padding: 25px;
+    box-shadow: 0px 1px 1px 0px #00000040;
+
+}
+
+.congrats__up__head h3 {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.congrats__up__head p {
+    width: 561px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 21px;
+    margin-bottom: 0;
+    letter-spacing: 0em;
+    text-align: left;
+    word-spacing: 1;
+}
+
+.congrats__continue__btn {
+    width: 148px;
+    height: 37px;
+    border-radius: 6px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: #FFFFFF;
+    background: #111C55E5;
+    box-shadow: 0px 1px 1px 0px #00000040;
+color: #fff;
+border: none;
+
+}

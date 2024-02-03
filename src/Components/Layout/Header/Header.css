@@ -22,15 +22,15 @@
   color: rgba(255, 255, 255, 1);
   text-align: left;
   font-weight: 700;
-
+  letter-spacing: -2.021px;
   max-width: 36rem;
 }
 
 .hero__description {
   color: #fff;
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   line-height: 1.75rem;
-  max-width: 28rem;
+  max-width: 23rem;
 }
 
 .banner-heading {
@@ -44,8 +44,8 @@
 
 .ellipse {
   position: absolute;
-  top: 150px;
-  left: 385px;
+  top: 168px;
+  left: 389px;
   width: 88px;
   height: 88px;
   object-fit: cover;
