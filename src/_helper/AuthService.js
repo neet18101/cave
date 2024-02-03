@@ -1,16 +1,16 @@
-// import axios from "axios";
-// export const guideService = {
-//   getGuidesByPermalink,
-//   getCategoryAttributes,
-//   getTopGuideCount
-// };
+import axios from "axios";
+export const ownerService = {
+  getOwnerDetails,
+};
 
-// async function getGuidesByPermalink(permalink) {
-//   return await axios.get(
-//     `${process.env.NEXT_PUBLIC_API_URL}/guide/${permalink}`,
-//     { headers: { Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}` } }
-//   );
-// }
+async function getOwnerDetails(ownerId) {
+  return await axios.get(
+    `${import.meta.env.VITE_API_URL}/api/v1/owner-details?ownerId=${ownerId}`,
+    {
+      headers: { Authorization: `Bearer ${import.meta.env.VITE_PUBLIC_TOKEN}` },
+    }
+  );
+}
 
 // async function getCategoryAttributes(permalink) {
 //   return await axios.get(
