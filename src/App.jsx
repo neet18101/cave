@@ -11,6 +11,7 @@ import Filter from "./Pages/Filter/Filter";
 import Owner from "./Pages/Owner/Owner";
 import PGlist from "./Pages/PGList/PGlist ";
 import OwnerDasboard from "./Pages/Ownerdasboard/OwnerDasboard";
+import Congratulation from "./Pages/Congratulation/Congratulation";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/list-property/:id" element={<Listing />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/filter" element={<Filter />} />
+        <Route path="/congratulation" element={<Congratulation />} />
       </Routes>
     </BrowserRouter>
   );
