@@ -1,19 +1,9 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { thunk } from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { userLoginReducer, userReducer } from "./Reducer/userReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import ownerDataSlice from "./Feature/OwnerDataSlices";
 
-const rootReducer = combineReducers({
-  userList: userReducer,
-  userLoginReducer: userLoginReducer,
+const store = configureStore({
+  reducer: {
+    ownerData: ownerDataSlice,
+  },
 });
-const middleware = [thunk];
-
-const initialState = {};
-const store = createStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
-
 export default store;

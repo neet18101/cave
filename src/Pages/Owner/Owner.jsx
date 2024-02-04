@@ -4,7 +4,8 @@ import "./owner.css";
 import Footer from "../../Components/Footer";
 import { useNavigate } from "react-router-dom";
 import { userAction } from "../../Redux/Action/userAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ownerDataRegister } from "../../Redux/Feature/OwnerDataSlices";
 
 function Owner() {
   const dispatch = useDispatch();
@@ -19,36 +20,33 @@ function Owner() {
   });
   const [errors, setErrors] = useState({});
 
+  // get redux state
+  const ownerData = useSelector((state) => state.ownerData.userData[0]);
+  console.log(ownerData);
   const validateForm = () => {
     const newErrors = {};
-
     // Validate ownerName
     if (!formData.ownerName.trim()) {
       newErrors.ownerName = "Owner Name is required";
     }
-
     // Validate ownerNumber
     if (!formData.ownerNumber.trim()) {
       newErrors.ownerNumber = "Mobile number is required";
     }
-
     // Validate ownerEmail
     if (!formData.ownerEmail.trim()) {
       newErrors.ownerEmail = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.ownerEmail)) {
       newErrors.ownerEmail = "Invalid email address";
     }
-
     // Validate ownerPassword
     if (!formData.ownerPassword.trim()) {
       newErrors.ownerPassword = "Password is required";
     }
-
     // Validate ownerGender
     if (!formData.ownerGender.trim()) {
       newErrors.ownerGender = "Gender is required";
     }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -71,11 +69,14 @@ function Owner() {
         propertyType: formData.ownerPropertyType,
         userType: 2,
       };
-      dispatch(userAction(owenerData));
+      dispatch(ownerDataRegister(owenerData));
+
+      setTimeout(() => {
+        
+        navigate("/login", { replace: true });
+      },2000)
       // navigate("/list-property", { replace: true });
     }
-
-    // Make sure to return some JSX, component, or null if needed
     return null;
   };
 
