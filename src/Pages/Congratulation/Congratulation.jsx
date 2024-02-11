@@ -87,7 +87,7 @@ function Congratulation() {
                     </div>
                 </div>
                 <div className="col-lg-12 d-flex justify-content-center mb-5">
-                    <button className="congrats__continue__btn">Continue  --></button>
+                    <button className="congrats__continue__btn">Continue <i className="fa fa-right-arrow"></i></button>
                 </div>
             </div>
         </div>

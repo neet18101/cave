@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 function Schedule({
@@ -15,6 +16,9 @@ function Schedule({
     endtime: "",
     user_id: param.id,
   });
+  // useSelector  get retrib=ve data from store
+  const propertyData = useSelector((state) => state.ownerData.data[0]);
+  console.log(propertyData);
   const handleInputChange = (field, value) => {
     setFormData({
       ...formData,
@@ -27,7 +31,7 @@ function Schedule({
   const handleSubmit = () => {
     onChildDataChange(formData);
   };
-  console.log(isLastTab);
+  // console.log(isLastTab);
 
   return (
     <>
@@ -170,7 +174,7 @@ function Schedule({
                   "08:00 PM",
                   "08:30 PM",
                   "09:00 PM",
-                ].map((data , index) => {
+                ].map((data, index) => {
                   return (
                     <li key={index}>
                       <a

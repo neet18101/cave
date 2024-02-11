@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { addPropertyData } from "../../Redux/Feature/OwnerDataSlices";
+import { useDispatch } from "react-redux";
 
 function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
-  const params =useParams()
+  const params = useParams();
   const [images, setImages] = useState([]);
   const [previewImages, setPreviewImages] = useState([]);
+  const dispatch = useDispatch();
 
   const handleImageChange = (e) => {
     const selectedImages = Array.from(e.target.files);
@@ -41,23 +44,20 @@ function Gallery({ saveNext, activeTab, handleTabClick, onChildDataChange }) {
     });
     formData.append("user_id", params.id);
 
-    try {
-      const user_id =params.id
-      // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
-     
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/v1/gallery`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      console.log("Upload successful:", response.data);
-    } catch (error) {
-      console.error("Error uploading images:", error);
-    }
+    console.log(formData);
+
+    // Serialize File objects to JSON-compatible format
+    const serializedImages = images.map((image) => ({
+      name: image.name,
+      size: image.size,
+      type: image.type,
+      // You may include other properties if needed
+    }));
+    console.log(serializedImages)
+    // Dispatch action with serialized FormData as payload
+    dispatch(addPropertyData({ key: 5, value: serializedImages }));
+
+    console.log("Images added to Redux state for later submission.");
   };
   return (
     <>

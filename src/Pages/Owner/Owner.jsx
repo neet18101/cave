@@ -71,10 +71,10 @@ function Owner() {
       };
       dispatch(ownerDataRegister(owenerData));
 
-      setTimeout(() => {
+      // setTimeout(() => {
         
-        navigate("/login", { replace: true });
-      },2000)
+      //   navigate("/login", { replace: true });
+      // },2000)
       // navigate("/list-property", { replace: true });
     }
     return null;

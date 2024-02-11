@@ -10,6 +10,10 @@ import Amenities from "./Amenities";
 import Gallery from "./Gallery";
 import Schedule from "./Schedule";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import OwnerDataSlices, {
+  addPropertyData,
+} from "../../Redux/Feature/OwnerDataSlices";
 
 const Listing = () => {
   // Dynamic Navpills
@@ -19,6 +23,13 @@ const Listing = () => {
     locality: "",
     landmark: "",
   });
+
+  //getRedux Data
+  // useSelector  get retrib=ve data from store
+  const propertyData = useSelector((state) => state.ownerData.data[0]);
+  console.log(propertyData ,"hello")
+
+  const dispatch = useDispatch();
   const tabsData = [
     {
       id: 1,
@@ -77,72 +88,31 @@ const Listing = () => {
   const handleChildDataChange = (newdata) => {
     // console.log(newData, "newData");
     const updatedParentData = [...parentData, newdata];
-    axios.post(
-      `${import.meta.env.VITE_API_URL}/api/v1/property`,
-      newdata,
-      config
-    );
-
+    // console.log(updatedParentData)
+    dispatch(addPropertyData({ key: 1, value: updatedParentData }));
+    // axios.post(
+    //   `${import.meta.env.VITE_API_URL}/api/v1/property`,
+    //   newdata,
+    //   config
+    // );
     setParentData(updatedParentData);
-    localStorage.setItem("parentData", JSON.stringify(newdata));
   };
   const handleLocalityChange = (newdata) => {
-    axios.post(
-      `${import.meta.env.VITE_API_URL}/api/v1/locality`,
-      newdata,
-      config
-    );
-    const updatedParentData = [...parentData, newdata];
-
-    setParentData(updatedParentData);
-    localStorage.setItem("locality", JSON.stringify(newdata));
+    dispatch(addPropertyData({ key: 2, value: newdata }));
   };
   const handleRentalChange = (newdata) => {
-    axios.post(
-      `${import.meta.env.VITE_API_URL}/api/v1/rental`,
-      newdata,
-      config
-    );
-    localStorage.setItem("rental", JSON.stringify(newdata));
-    const updatedParentData = [...parentData, newdata];
-
-    setParentData(updatedParentData);
+    dispatch(addPropertyData({ key: 3, value: newdata }));
   };
   const handleAmenitiesChange = (newdata) => {
-    axios.post(
-      `${import.meta.env.VITE_API_URL}/api/v1/amenities`,
-      newdata,
-      config
-    );
-    localStorage.setItem("amenities", JSON.stringify(newdata));
-    const updatedParentData = [...parentData, newdata];
-
-    setParentData(updatedParentData);
+    dispatch(addPropertyData({ key: 4, value: newdata }));
   };
   const handleGalleryChange = (newdata) => {
-    console.log(newdata, "newdata");
-    axios.post(
-      `${import.meta.env.VITE_API_URL}/api/v1/gallery`,
-      newdata,
-      config
-    );
-
-    localStorage.setItem("gallery", JSON.stringify(newdata));
-    const updatedParentData = [...parentData, newdata];
-
-    setParentData(updatedParentData);
+    dispatch(addPropertyData({ key: 5, value: newdata }));
   };
   const handleScheduleChange = (newdata) => {
-    axios
-      .post(`${import.meta.env.VITE_API_URL}/api/v1/schedule`, newdata, config)
-      .then((res) => {
-        res.data.status === 200 && window.location("/dashboard");
-      });
+    dispatch(addPropertyData({ key: 6, value: newdata }));
 
-    localStorage.setItem("schedule", JSON.stringify(newdata));
-    const updatedParentData = [...parentData, newdata];
-
-    setParentData(updatedParentData);
+    // setParentData(updatedParentData);
   };
 
   return (

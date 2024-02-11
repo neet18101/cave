@@ -12,9 +12,7 @@ function Property({
   console.log(params.id);
   const [selectedItem, setSelectedItem] = useState("Select");
   const [formData, setFormData] = useState({
-    ownerName: "",
-    email: "",
-    apartmentType: "",
+    apartmentName: "",
     bhkType: "",
     totalFloor: "",
     floor: "",
@@ -48,16 +46,16 @@ function Property({
         <hr className="divide" />
         <div className="mb-3">
           <label htmlFor="pg-name" className="form-label form__label__listing">
-            Owner Name
+            Apartment Name
           </label>
           <input
             type="text"
             className="form-control"
             id="pg-name"
-            placeholder="Enter Your Name"
+            placeholder="Eg. WinterSpring Rental, etc..."
             style={{ backgroundColor: "#f9fafc" }}
-            value={formData.ownerName}
-            onChange={(e) => handleInputChange("ownerName", e.target.value)}
+            value={formData.apartmentName}
+            onChange={(e) => handleInputChange("apartmentName", e.target.value)}
           />
         </div>
         <div className="row justify-content-between">
@@ -91,29 +89,7 @@ function Property({
               </ul>
             </div>
           </div>
-
-          <div className="col-lg-5">
-            <div>
-              <label
-                htmlFor="exampleInputEmail1"
-                className="form-label form__label__listing"
-              >
-                Email address
-              </label>
-              <input
-                type="email"
-                className="form-control listing__email"
-                placeholder="Eg. WinterSpring Rental, etc..."
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                value={formData.email}
-                onChange={(e) => handleInputChange("email", e.target.value)}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="row justify-content-between mt-3">
-          <div className="col-lg-4 align-items-between">
+          <div className="col-lg-6 align-items-between">
             <label className="form__label__listing">BHK Type </label>
             <div className="dropdown-center drop__down">
               <button
@@ -141,7 +117,28 @@ function Property({
               </ul>
             </div>
           </div>
-          <div className="col-lg-4">
+        </div>
+        <div className="row justify-content-between mt-3">
+          <div className="col-lg-6">
+            <div>
+              <label
+                htmlFor="exampleInputEmail3"
+                className="form-label form__label__listing"
+              >
+                Floor
+              </label>
+              <input
+                type="number"
+                className="form-control listing__email"
+                placeholder="Enter floor"
+                id="exampleInputEmail3"
+                aria-describedby="emailHelp"
+                onChange={(e) => handleInputChange("floor", e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="col-lg-6">
             <div>
               <label
                 htmlFor="exampleInputEmail2"
@@ -161,27 +158,40 @@ function Property({
               />
             </div>
           </div>
-          <div className="col-lg-4">
-            <div>
-              <label
-                htmlFor="exampleInputEmail3"
-                className="form-label form__label__listing"
-              >
-                Floor
-              </label>
-              <input
-                type="number"
-                className="form-control listing__email"
-                placeholder="Enter floor"
-                id="exampleInputEmail3"
-                aria-describedby="emailHelp"
-                onChange={(e) => handleInputChange("floor", e.target.value)}
-              />
-            </div>
-          </div>
         </div>
         <div className="row justify-content-between mt-3">
-          <div className="col-lg-6 align-items-between">
+          <div className="mt-3 col-lg-6">
+            <label
+              htmlFor="pg-name"
+              className="form-label form__label__listing"
+            >
+              Built up area{" "}
+            </label>
+            <input
+              type="number"
+              className="form-control listing__email"
+              id="pg-name"
+              onChange={(e) => handleInputChange("builtUpArea", e.target.value)}
+              placeholder="area sqft."
+            />
+          </div>
+          <div className="mt-3 col-lg-6">
+            <label
+              htmlFor="pg-name"
+              className="form-label form__label__listing"
+            >
+              Near universty/college
+            </label>
+            <input
+              type="text"
+              className="form-control listing__email"
+              id="pg-name"
+              onChange={(e) => handleInputChange("universty/college", e.target.value)}
+              placeholder="Eg. CU, PU, etc..."
+            />
+          </div>
+
+          <div className="mt-3 col-lg-12 align-items-between">
             <label className="form__label__listing">Property age </label>
             <div className="dropdown-center drop__down">
               <button
@@ -212,58 +222,8 @@ function Property({
               </ul>
             </div>
           </div>
-          <div className="col-lg-6 align-items-between">
-            <label className="form__label__listing">Facing</label>
-            <div className="dropdown-center drop__down">
-              <button
-                className="dropdown__btn dropdown__btn"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                {formData.facing ? formData.facing : "Select"}
-                <i className="fa-solid fa-chevron-down" />
-              </button>
-              <ul
-                className="dropdown-menu dropdown__menu__listing__property"
-                style={{ overflowY: "scroll" }}
-              >
-                {[
-                  "North",
-                  "South",
-                  "East",
-                  "West",
-                  "North-East",
-                  "North-West",
-                  "South-East",
-                  "South-West",
-                  "Don't Know",
-                ].map((item) => (
-                  <li key={item}>
-                    <a
-                      className="dropdown-item dropdown__item__listing"
-                      onClick={() => handleInputChange("facing", item)}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
-        <div className="mt-3 col-lg-6">
-          <label htmlFor="pg-name" className="form-label form__label__listing">
-            Built up area{" "}
-          </label>
-          <input
-            type="number"
-            className="form-control listing__email"
-            id="pg-name"
-            onChange={(e) => handleInputChange("builtUpArea", e.target.value)}
-            placeholder="area sqft."
-          />
-        </div>
+
         <div className="listing__foot__btns d-flex">
           {activeTab !== 1 && (
             <button
