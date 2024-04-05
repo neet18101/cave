@@ -63,7 +63,7 @@ const Signup = () => {
 
     if (Object.values(formErrors).every((error) => !error)) {
       // Form is valid, you can proceed with form submission here
-      console.log("=========>", formData);
+      // console.log("=========>", formData);
 
       dispatch(userAction(formData));
     } else {

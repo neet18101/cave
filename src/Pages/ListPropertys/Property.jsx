@@ -186,7 +186,9 @@ function Property({
               type="text"
               className="form-control listing__email"
               id="pg-name"
-              onChange={(e) => handleInputChange("universty/college", e.target.value)}
+              onChange={(e) =>
+                handleInputChange("universty/college", e.target.value)
+              }
               placeholder="Eg. CU, PU, etc..."
             />
           </div>

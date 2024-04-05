@@ -84,7 +84,7 @@ const Header = () => {
 
   return (
     <>
-     <SubNavbar/>
+      <SubNavbar />
       <section className="banner-section">
         <div className="container-fluid">
           <div className="row">

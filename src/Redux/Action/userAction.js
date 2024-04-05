@@ -27,7 +27,7 @@ export const userAction = (user) => async (dispatch) => {
         duration: 3000, // Toast will be shown for 3 seconds
       });
     } else if (data.success === true) {
-      console.log(data.type);
+      // console.log(data.type);
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
       if (data.type === 2) {
         localStorage.setItem("userInfo", JSON.stringify(data.token));
@@ -77,7 +77,7 @@ export const userLoginAction = (user) => async (dispatch) => {
     );
 
     const data = response.data;
-    console.log(data);
+    // console.log(data);
 
     if (data.success === false) {
       toast.error(data.msg, {

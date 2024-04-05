@@ -27,7 +27,7 @@ const Listing = () => {
   //getRedux Data
   // useSelector  get retrib=ve data from store
   const propertyData = useSelector((state) => state.ownerData.data[0]);
-  console.log(propertyData ,"hello")
+  console.log(propertyData, "hello");
 
   const dispatch = useDispatch();
   const tabsData = [
@@ -111,7 +111,6 @@ const Listing = () => {
   };
   const handleScheduleChange = (newdata) => {
     dispatch(addPropertyData({ key: 6, value: newdata }));
-
     // setParentData(updatedParentData);
   };
 

@@ -6,24 +6,19 @@ import { decryptData } from "../../_helper/cryptoUtils";
 import Footer from "../../Components/Footer";
 import { Link } from "react-router-dom";
 import { ownerService } from "../../_helper/AuthService";
+import { jwtDecode } from "jwt-decode";
 
 const OwnerDasboard = () => {
   const [ownerInfo, setownerInfo] = useState("");
   const getUserFromLocalStorage = JSON.parse(localStorage.getItem("userInfo"));
-  console.log(getUserFromLocalStorage);
-  const decode = (token, secertKey) => {
-    setownerInfo(decryptData(token, secertKey));
-  };
-  useEffect(() => {
-    decode(
-      getUserFromLocalStorage && getUserFromLocalStorage,
-      import.meta.env.VITE_SECRET_KEY
-    );
-  }, []);
+  console.log(getUserFromLocalStorage, "neet");
+
+  const token = getUserFromLocalStorage && getUserFromLocalStorage.token;
+  const tokenDecode = token && jwtDecode(token);
 
   // get owner details
   const [ownerData, setOwnerData] = useState("");
-  console.log(ownerInfo);
+  // console.log(ownerInfo);
   const fetchOwnerData = async () => {
     try {
       const data = await ownerService.getOwnerDetails(ownerInfo?._id);
@@ -35,13 +30,12 @@ const OwnerDasboard = () => {
   useEffect(() => {
     fetchOwnerData();
   }, [ownerInfo?._id]);
-  console.log(ownerData[0]?.galleryData)
+  // console.log(ownerData[0]?.galleryData)
 
   return (
     <>
       <SubNavbar />
       <section id="owner-space" className="container-fluid ">
-         
         <h1>Owner Space</h1>
         <div className="row owner__space">
           <div className="col-lg-8">
@@ -57,8 +51,10 @@ const OwnerDasboard = () => {
                 </p>
                 <button>Discover our Guide</button>
               </div>
-              <div className="owner__card__mid
-              "></div>
+              <div
+                className="owner__card__mid
+              "
+              ></div>
               <div className="owner__card__right d-flex flex-column justify-content-center align-items-center">
                 <img src="/image/Vector (12).png" alt="" />
                 <h5>Need Help ?</h5>
@@ -211,10 +207,9 @@ const OwnerDasboard = () => {
                       marginTop: "50px",
                     }}
                   >
-                   {
-                    ownerData[0]?.galleryData?.map((data)=>{
-                      data?.filename?.map((item,index)=>{
-                        return(
+                    {ownerData[0]?.galleryData?.map((data) => {
+                      data?.filename?.map((item, index) => {
+                        return (
                           <div className="col-lg-3">
                             <img
                               src={`${import.meta.env.VITE_API_URL}/`}
@@ -225,10 +220,9 @@ const OwnerDasboard = () => {
                               }}
                             />
                           </div>
-                        )
-                      })
-                    })
-                   }
+                        );
+                      });
+                    })}
                     {/* <div className="col-lg-12">
                       <div className="card mb-3 w-100 manage__pill__card">
                         <div className="row g-0">
@@ -678,7 +672,7 @@ const OwnerDasboard = () => {
                 <div className="admin__view__profile d-flex justify-content-between align-items-center ">
                   <div>
                     <h2 style={{ textTransform: "capitalize" }}>
-                      {ownerInfo?.name}
+                      {tokenDecode?.name}
                     </h2>
                     <Link to={""}>View Profile</Link>
                   </div>
@@ -689,7 +683,7 @@ const OwnerDasboard = () => {
                     className="admin__add__prop d-flex justify-content-between align-items-center mt-4"
                     style={{ cursor: "pointer" }}
                   >
-                    <Link to={`/list-property/${ownerInfo?._id}`}>
+                    <Link to={`/list-property/${tokenDecode?.id}`}>
                       Add new Property
                     </Link>
                     <img src="/image/Vector (14).png" alt="" />
@@ -700,7 +694,7 @@ const OwnerDasboard = () => {
                     className="admin__add__prop d-flex justify-content-between align-items-center mt-4"
                     style={{ cursor: "pointer" }}
                   >
-                    <Link to={`/list-property/${ownerInfo?._id}`}>
+                    <Link to={`/list-property/${tokenDecode?.id}`}>
                       Add new Property
                     </Link>
                     <img src="/image/Vector (14).png" alt="" />

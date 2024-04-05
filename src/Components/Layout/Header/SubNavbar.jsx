@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { decryptData } from "../../../_helper/cryptoUtils";
+// import { decryptData } from "../../../_helper/cryptoUtils";
+import { jwtDecode } from "jwt-decode";
 
 const SubNavbar = () => {
   const [active, setActive] = useState(false);
@@ -17,19 +18,15 @@ const SubNavbar = () => {
   const userData = JSON.parse(localStorage.getItem("userInfo"));
   const [sortedData, setSortedData] = useState("");
   // console.log(userData && userData.token,VITE_SECRET_KEY);
-  const decode = (token, secertKey) => {
-    console.log(token);
-    setSortedData(decryptData(token, secertKey));
-  };
-  useEffect(() => {
-    decode(userData && userData, import.meta.env.VITE_SECRET_KEY);
-  }, []);
+  const token = userData && userData.token;
+  const tokenDecode = token && jwtDecode(token);
+  // console.log(tokenDecode);
 
   const logOut = () => {
     localStorage.removeItem("userInfo");
     window.location.href = "/";
   };
-  console.log(sortedData);
+  // console.log(userData);
 
   return (
     <>
@@ -43,7 +40,7 @@ const SubNavbar = () => {
           style={{
             borderBottom: " 1px solid #4d4d4d94",
             filter: "drop-shadow(1px 1px 1px #bcbcbc)",
-            zIndex:"10",
+            zIndex: "10",
           }}
         >
           <div className="container-fluid nav__padding">
@@ -91,8 +88,8 @@ const SubNavbar = () => {
               <span className="ti-align-justify navbar-toggler-icon" />
             </button>
 
-            {sortedData && sortedData !== null ? (
-              sortedData?.userType === 2 ? (
+            {tokenDecode && tokenDecode !== null ? (
+              tokenDecode?.type === 2 ? (
                 // Admin view
                 <>
                   <div className="nav__right d-flex justify-content-between align-items-center">
@@ -113,7 +110,7 @@ const SubNavbar = () => {
                           aria-expanded="false"
                           style={{ textTransform: "capitalize" }}
                         >
-                          {sortedData?.name}{" "}
+                          {tokenDecode?.name}{" "}
                           <i className="fa-solid fa-chevron-down" />
                         </button>
                         <ul
@@ -200,7 +197,7 @@ const SubNavbar = () => {
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
-                          {sortedData?.name}{" "}
+                          {tokenDecode?.name}{" "}
                           <i className="fa-solid fa-chevron-down" />
                         </button>
                         <ul className="dropdown-menu mt-2">

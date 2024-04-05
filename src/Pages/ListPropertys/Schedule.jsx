@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -10,7 +11,7 @@ function Schedule({
   onChildDataChange,
 }) {
   const param = useParams();
-  const [formData, setFormData] = useState({
+  const [formDatas, setFormDatas] = useState({
     availability: "",
     starttime: "",
     endtime: "",
@@ -18,18 +19,37 @@ function Schedule({
   });
   // useSelector  get retrib=ve data from store
   const propertyData = useSelector((state) => state.ownerData.data[0]);
-  console.log(propertyData);
+  const galleryData = useSelector((state) => state.ownerData.gallery);
+  console.log(galleryData, "gallery");
   const handleInputChange = (field, value) => {
-    setFormData({
-      ...formData,
+    setFormDatas({
+      ...formDatas,
       [field]: value,
     });
   };
   // const handleInputChange = (item) => {
   //   setSelectedItem(item);
   // };
+
+  // console.log(propertyData, galleryData, "hello");
   const handleSubmit = () => {
-    onChildDataChange(formData);
+    onChildDataChange(formDatas);
+    const config = {
+      header: { Authorization: `Bearer ${import.meta.env.VITE_PUBLIC_TOKEN}` },
+    };
+    const formData = new FormData();
+    formData.append("property", propertyData);
+    galleryData.forEach((image, index) => {
+      formData.append(`gallery`, image);
+    });
+    // console.log(formData, "neet");
+
+    // axios.post(
+    //   `${import.meta.env.VITE_API_URL}/api/v1/property`,
+    //   config,
+    //   propertyData,
+    //   galleryData
+    // );
   };
   // console.log(isLastTab);
 
@@ -52,7 +72,7 @@ function Schedule({
               type="radio"
               id="everyday"
               name="fav_language"
-              checked={formData.availability === "mon-sun"}
+              checked={formDatas.availability === "mon-sun"}
               onChange={() => handleInputChange("availability", "mon-sun")}
               hidden
             />
@@ -73,7 +93,7 @@ function Schedule({
               type="radio"
               id="weekday"
               name="fav_language"
-              checked={formData.availability === "mon-fri"}
+              checked={formDatas.availability === "mon-fri"}
               onChange={() => handleInputChange("availability", "mon-fri")}
               hidden
             />
@@ -94,7 +114,7 @@ function Schedule({
               type="radio"
               id="weekend"
               name="fav_language"
-              checked={formData.availability === "sat-sun"}
+              checked={formDatas.availability === "sat-sun"}
               onChange={() => handleInputChange("availability", "sat-sun")}
               hidden
             />
@@ -132,7 +152,7 @@ function Schedule({
                   }}
                   alt=""
                 />
-                {formData.starttime ? formData.starttime : "Select time"}
+                {formDatas.starttime ? formDatas.starttime : "Select time"}
                 <i
                   className="fa-solid fa-chevron-down"
                   style={{
@@ -207,7 +227,7 @@ function Schedule({
                   }}
                   alt=""
                 />
-                {formData.endtime ? formData.endtime : "Select Time"}
+                {formDatas.endtime ? formDatas.endtime : "Select Time"}
                 <i
                   className="fa-solid fa-chevron-down"
                   style={{

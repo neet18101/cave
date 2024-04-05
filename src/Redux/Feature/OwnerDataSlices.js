@@ -6,13 +6,13 @@ const initialState = {
   userData: [],
   is_success: "",
   error: "",
+  gallery:null,
   data: [
     {
       propertyData: {},
       localityDetails: {},
       rentalDetail: {},
       amenities: {},
-      gallery:null,
       scheduleVisit: {},
     },
   ],
@@ -75,7 +75,7 @@ export const ownerDataSlice = createSlice({
   reducers: {
     addPropertyData: (state, action) => {
       const { key, value } = action.payload || {};
-      console.log(action.payload)
+      console.log(value, "hello")
       if (key === 1) {
         state.data[0].propertyData = value;
       } else if (key === 2) {
@@ -85,7 +85,7 @@ export const ownerDataSlice = createSlice({
       } else if (key === 4) {
         state.data[0].amenities = value;
       } else if (key === 5) {
-        state.data[0].gallery = value;
+        state.gallery = value;
       } else if (key === 6) {
         state.data[0].scheduleVisit = value;
       } else {

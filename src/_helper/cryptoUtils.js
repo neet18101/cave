@@ -9,7 +9,7 @@ const userKey = "luciferlord0123456789";
 
 export const decryptData = (encryptedData, userKey) => {
   try {
-    console.log(encryptData)
+    // console.log(encryptData)
     const bytes = AES.decrypt(encryptedData, userKey);
     return JSON.parse(bytes.toString(enc.Utf8));
   } catch (error) {

@@ -22,7 +22,7 @@ function Owner() {
 
   // get redux state
   const ownerData = useSelector((state) => state.ownerData.userData[0]);
-  console.log(ownerData);
+  // console.log(ownerData);
   const validateForm = () => {
     const newErrors = {};
     // Validate ownerName
