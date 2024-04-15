@@ -6,7 +6,8 @@ import Swiper from "swiper/bundle";
 import HandPickedContent from "./HandPickedContent";
 import "../Featured/Featured.css";
 
-const HandPicked = () => {
+const HandPicked = ({ handPicked }) => {
+  // console.log(handPicked);
   const swiperRef = useRef(null);
   useEffect(() => {
     const mySwiper = new Swiper(".slidercontainer", {
@@ -65,58 +66,6 @@ const HandPicked = () => {
       });
     }
   }, []);
-
-  const Products = [
-    {
-      id: 1,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-    {
-      id: 2,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-    {
-      id: 3,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-    {
-      id: 4,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-    {
-      id: 5,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-    {
-      id: 6,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-    {
-      id: 7,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-    {
-      id: 8,
-      name: "Room for rent",
-      description: "1598, 23B, Sector 23, Chandigarh, 160023, India",
-      img: "/cardImage/cardImage.png",
-    },
-  ];
-
   return (
     <>
       <div className="container-fluid">
@@ -146,19 +95,23 @@ const HandPicked = () => {
           <div className="post-conatin">
             <div className="slidercontainer">
               <div className="swiper-wrapper">
-                {Products.map((item) => {
-                  return (
-                    <div className="swiper-slide" key={item.id}>
-                      <HandPickedContent
-                        key={item.id}
-                        image={item.img}
-                        title={item.name}
-                        description={item.description}
-                        alt={item.name}
-                      />
-                    </div>
-                  );
-                })}
+                {handPicked &&
+                  handPicked?.map((item, index) => {
+                    return (
+                      <div className="swiper-slide" key={index}>
+                        <HandPickedContent
+                          key={item?.__id}
+                          product_url={item?.property_url}
+                          rating={item?.rating}
+                          image={item?.gallery}
+                          title={item?.apartmentName}
+                          price={item?.expectRent}
+                          description={item?.description}
+                          alt={item?.apartmentName}
+                        />
+                      </div>
+                    );
+                  })}
               </div>
               {/* <div className="swiper-button-next"></div>
                             <div className="swiper-button-prev"></div> */}

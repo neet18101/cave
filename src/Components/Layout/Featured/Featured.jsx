@@ -6,8 +6,9 @@ import "swiper/css/bundle";
 import { FeaturedContent } from "./FeaturedContent";
 import "./Featured.css";
 
-const Featured = () => {
+const Featured = ({ featuredData }) => {
   const swiperRef = useRef(null);
+  // console.log(featuredData);
   useEffect(() => {
     const mySwiper = new Swiper(".swiper-container", {
       slidesPerView: 1, // Number of slides to show at once
@@ -173,15 +174,18 @@ const Featured = () => {
           <div className="post-conatin">
             <div className="swiper-container">
               <div className="swiper-wrapper">
-                {Products.map((item) => {
+                {featuredData&&featuredData?.map((item,index) => {
                   return (
-                    <div className="swiper-slide" key={item.id}>
+                    <div className="swiper-slide" key={index}>
                       <FeaturedContent
-                        key={item.id}
-                        image={item.img}
-                        title={item.name}
-                        description={item.description}
-                        alt={item.name}
+                        key={item?.__id}
+                        product_url={item?.property_url}
+                        rating={item?.rating}
+                        image={item?.gallery}
+                        title={item?.apartmentName}
+                        price={item?.expectRent}
+                        description={item?.description}
+                        alt={item?.apartmentName}
                       />
                     </div>
                   );

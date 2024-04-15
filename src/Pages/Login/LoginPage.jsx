@@ -5,6 +5,7 @@ import "./Login.css";
 import { useDispatch } from "react-redux";
 import { userLoginAction } from "../../Redux/Action/userAction";
 import { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ function LoginPage() {
 
   return (
     <>
-     <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <section className="loginSection">
         <div className="container">
           <div className="row">
@@ -219,9 +220,9 @@ function LoginPage() {
                     <div className="text-center">
                       <p>
                         Don’t have an account?{" "}
-                        <a href="#!" style={{ color: "#5E17EB" }}>
+                        <Link href="/signup" style={{ color: "#5E17EB" }}>
                           Sign up now
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   </div>
